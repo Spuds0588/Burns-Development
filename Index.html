@@ -43,6 +43,9 @@
             color: var(--brand-purple);
             font-weight: 600;
         }
+        .section.has-background-brand-purple-light {
+             background-color: var(--brand-purple-light);
+        }
         .box {
             box-shadow: 0 8px 16px rgba(10, 10, 10, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -70,10 +73,10 @@
         .project-card {
             display: flex;
             flex-direction: column;
-            height: 100%; /* Ensures cards in a row are the same height */
+            height: 100%;
         }
         .project-card .card-content {
-            flex-grow: 1; /* Allows content to fill space, pushing footer down */
+            flex-grow: 1;
         }
         .project-card .card-image img {
             height: 64px;
@@ -81,10 +84,14 @@
             margin: 1.5rem auto 1rem;
         }
 
-        /* Support Section */
-        #support {
-            background-color: var(--brand-purple-light);
+        /* Content Section */
+        #content .image {
+            box-shadow: 0 8px 24px rgba(10, 10, 10, 0.15);
+            border-radius: 8px;
+            border: 1px solid #dbdbdb;
         }
+
+        /* Support Section */
         .support-box {
             border: 2px solid var(--brand-purple);
             padding: 2.5rem;
@@ -156,9 +163,30 @@
     <section id="projects" class="section">
         <div class="container">
             <h2 class="title is-2 section-heading has-text-centered">My Projects</h2>
-            <!-- This div will be populated by JavaScript -->
             <div id="project-gallery" class="columns is-multiline is-centered">
                 <!-- Project cards will be injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section id="content" class="section has-background-brand-purple-light">
+        <div class="container has-text-centered">
+            <h2 class="title is-2 section-heading">Latest Content & Tutorials</h2>
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    <p class="subtitle is-5 mb-5">
+                        Beyond tools, I create video content on YouTube to share insights on product management, productivity, and technology. Check out my latest videos on my channel.
+                    </p>
+                    <figure class="image is-16by9 mb-5">
+                        <!-- IMPORTANT: Replace this src with a real screenshot of your YouTube page -->
+                        <img src="https://via.placeholder.com/1280x720.png?text=Replace+with+YouTube+Channel+Screenshot" alt="Screenshot of the Corey Burns YouTube channel">
+                    </figure>
+                    <a href="https://youtube.com/@corey_burns" target="_blank" class="button is-primary is-large">
+                        <span class="icon"><i class="fab fa-youtube"></i></span>
+                        <span>Visit My Channel</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -166,7 +194,7 @@
     <!-- Support / Call to Action Section -->
     <section id="support" class="section">
         <div class="container has-text-centered">
-            <h2 class="title is-2 section-heading">Enjoying these tools?</h2>
+            <h2 class="title is-2 section-heading">Enjoying these free resources?</h2>
             <div class="columns is-centered">
                 <div class="column is-two-thirds">
                     <div class="box support-box">
@@ -218,8 +246,9 @@
         document.addEventListener('DOMContentLoaded', function () {
             
             // --- EASY-TO-UPDATE PROJECT DATA ---
-            // Add your project details to this array.
-            // iconUrl should be a relative path to your icon assets (e.g., 'assets/icons/icon-name.png')
+            // Edit this array to manage your projects.
+            // iconUrl: relative path to your icon (e.g., 'assets/icons/icon.png')
+            // downloadButtonText: The text for the second button (e.g., "Download", "Visit Tool", "Get Template")
             const projects = [
                 {
                     title: 'Project Planner Pro',
@@ -227,15 +256,17 @@
                     githubUrl: 'https://github.com/yourusername/project-planner-pro',
                     downloadUrl: 'https://github.com/yourusername/project-planner-pro/archive/refs/heads/main.zip',
                     iconUrl: 'https://via.placeholder.com/64x64/5a2a88/ffffff?text=P',
-                    description: 'A comprehensive Notion template for managing complex projects from start to finish, including timelines, tasks, and resource allocation.'
+                    description: 'A comprehensive Notion template for managing complex projects from start to finish.',
+                    downloadButtonText: 'Get Template'
                 },
                 {
                     title: 'Markdown Quick-Formatter',
                     tag: 'Tool',
                     githubUrl: 'https://github.com/yourusername/markdown-formatter',
-                    downloadUrl: 'https://github.com/yourusername/markdown-formatter',
+                    downloadUrl: 'https://yourusername.github.io/markdown-formatter/', // Link to the live tool
                     iconUrl: 'https://via.placeholder.com/64x64/5a2a88/ffffff?text=M',
-                    description: 'A lightweight web tool to quickly format text into clean Markdown for documentation, notes, or blog posts. No installation required.'
+                    description: 'A lightweight web tool to quickly format text into clean Markdown. No installation required.',
+                    downloadButtonText: 'Visit Tool'
                 },
                 {
                     title: 'Team Meeting Agenda',
@@ -243,7 +274,8 @@
                     githubUrl: 'https://github.com/yourusername/meeting-agenda',
                     downloadUrl: 'https://github.com/yourusername/meeting-agenda/archive/refs/heads/main.zip',
                     iconUrl: 'https://via.placeholder.com/64x64/5a2a88/ffffff?text=A',
-                    description: 'A simple yet effective Google Docs template to run structured and productive team meetings, ensuring all key points are covered.'
+                    description: 'A simple yet effective Google Docs template to run structured and productive team meetings.',
+                    downloadButtonText: 'Download'
                 },
                  {
                     title: 'Dev Portfolio Page',
@@ -251,61 +283,58 @@
                     githubUrl: 'https://github.com/yourusername/dev-portfolio',
                     downloadUrl: 'https://github.com/yourusername/dev-portfolio/archive/refs/heads/main.zip',
                     iconUrl: 'https://via.placeholder.com/64x64/5a2a88/ffffff?text=D',
-                    description: 'A clean, single-page HTML/CSS portfolio template for developers to showcase their work and skills. Fully responsive.'
+                    description: 'A clean, single-page HTML/CSS portfolio template for developers to showcase their work and skills.',
+                    downloadButtonText: 'Get Template'
                 }
             ];
 
-            const gallery = document.getElementById('project-gallery');
-
-            if (gallery) {
-                // Clear any potential placeholder content
-                gallery.innerHTML = ''; 
-
-                // Check if there are projects to display
-                if(projects.length === 0) {
-                    gallery.innerHTML = `<div class="column"><p class="has-text-centered">No projects to display yet. Check back soon!</p></div>`;
-                    return;
-                }
-
-                // Loop through the projects and generate an HTML card for each one
-                projects.forEach(project => {
-                    // Create the main column div
-                    const column = document.createElement('div');
-                    column.className = 'column is-one-third-desktop is-half-tablet';
-
-                    // Use a template literal for clean HTML creation
-                    column.innerHTML = `
-                        <div class="card project-card">
-                            <div class="card-image has-text-centered">
-                                <figure class="image is-inline-block">
-                                    <img src="${project.iconUrl}" alt="${project.title} icon">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-4">${project.title}</p>
-                                        <p class="subtitle is-6"><span class="tag is-info is-light">${project.tag}</span></p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    ${project.description}
-                                </div>
-                            </div>
-                            <footer class="card-footer">
-                                <a href="${project.githubUrl}" target="_blank" class="card-footer-item">
-                                    <span class="icon mr-2"><i class="fab fa-github"></i></span> GitHub
-                                </a>
-                                <a href="${project.downloadUrl}" target="_blank" class="card-footer-item">
-                                    <span class="icon mr-2"><i class="fas fa-download"></i></span> Download
-                                </a>
-                            </footer>
-                        </div>
-                    `;
-                    gallery.appendChild(column);
-                });
-            }
+            populateProjects(projects);
         });
+
+        function populateProjects(projects) {
+            const gallery = document.getElementById('project-gallery');
+            if (!gallery) return;
+
+            gallery.innerHTML = ''; 
+            if(projects.length === 0) {
+                gallery.innerHTML = `<div class="column"><p class="has-text-centered">No projects to display yet. Check back soon!</p></div>`;
+                return;
+            }
+
+            projects.forEach(project => {
+                const column = document.createElement('div');
+                column.className = 'column is-one-third-desktop is-half-tablet';
+                column.innerHTML = `
+                    <div class="card project-card">
+                        <div class="card-image has-text-centered">
+                            <figure class="image is-inline-block">
+                                <img src="${project.iconUrl}" alt="${project.title} icon">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">${project.title}</p>
+                                    <p class="subtitle is-6"><span class="tag is-info is-light">${project.tag}</span></p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                ${project.description}
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="${project.githubUrl}" target="_blank" class="card-footer-item">
+                                <span class="icon mr-2"><i class="fab fa-github"></i></span> GitHub
+                            </a>
+                            <a href="${project.downloadUrl}" target="_blank" class="card-footer-item">
+                                <span class="icon mr-2"><i class="fas fa-download"></i></span> ${project.downloadButtonText}
+                            </a>
+                        </footer>
+                    </div>
+                `;
+                gallery.appendChild(column);
+            });
+        }
     </script>
 </body>
 </html>
