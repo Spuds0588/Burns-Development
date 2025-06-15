@@ -1,1 +1,311 @@
-<html></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burns Development - Tools & Templates by Corey Burns</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <style>
+        /* 
+         * Custom Styles for Burns Development
+         * Primary Purple: #5a2a88
+         * Light Purple Background: #f7f3fb
+         * Accent/Hover Purple: #48226d
+         */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --brand-purple: #5a2a88;
+            --brand-purple-light: #f7f3fb;
+            --brand-purple-dark: #48226d;
+        }
+
+        /* Hero Section */
+        .hero.is-primary {
+            background-color: var(--brand-purple);
+        }
+        .hero.is-primary .title {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .hero.is-primary .subtitle {
+            font-size: 1.5rem;
+            line-height: 1.4;
+        }
+
+        /* General Styles */
+        .section-heading {
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
+            color: var(--brand-purple);
+            font-weight: 600;
+        }
+        .box {
+            box-shadow: 0 8px 16px rgba(10, 10, 10, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(10, 10, 10, 0.1);
+        }
+
+        /* About Section */
+        #about .box {
+            background-color: var(--brand-purple-light);
+        }
+        .headshot {
+            max-width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Projects Section */
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Ensures cards in a row are the same height */
+        }
+        .project-card .card-content {
+            flex-grow: 1; /* Allows content to fill space, pushing footer down */
+        }
+        .project-card .card-image img {
+            height: 64px;
+            width: 64px;
+            margin: 1.5rem auto 1rem;
+        }
+
+        /* Support Section */
+        #support {
+            background-color: var(--brand-purple-light);
+        }
+        .support-box {
+            border: 2px solid var(--brand-purple);
+            padding: 2.5rem;
+        }
+        .button.is-primary {
+            background-color: var(--brand-purple);
+        }
+        .button.is-primary:hover {
+            background-color: var(--brand-purple-dark);
+        }
+        .button.is-primary.is-outlined {
+            background-color: transparent;
+            border-color: var(--brand-purple);
+            color: var(--brand-purple);
+        }
+        .button.is-primary.is-outlined:hover {
+            background-color: var(--brand-purple);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero is-primary is-bold">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">
+                    Burns Development
+                </h1>
+                <h2 class="subtitle">
+                    Practical tools and templates that make your work life easier.
+                </h2>
+                <div class="mt-5">
+                    <a href="#support" class="button is-white is-outlined is-large is-rounded">Support My Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="box">
+                <div class="columns is-vcentered">
+                    <div class="column is-one-third has-text-centered">
+                        <!-- Placeholder for your headshot -->
+                        <img src="https://via.placeholder.com/200x200?text=Corey's+Headshot" alt="Corey Burns Headshot" class="headshot">
+                    </div>
+                    <div class="column is-two-thirds">
+                        <h2 class="title is-3 has-text-dark">Hi, I'm Corey Burns.</h2>
+                        <p class="is-size-5">
+                            As a Product Manager and Innovator, I'm passionate about creating solutions that solve real-world problems. Burns Development is my personal collection of tools, templates, and content designed to streamline common tasks and boost productivity.
+                        </p>
+                        <p class="is-size-5 mt-4">
+                            Everything you see here is built with the goal of being genuinely useful. I hope you find something that helps you in your day-to-day work.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Gallery Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="title is-2 section-heading has-text-centered">My Projects</h2>
+            <!-- This div will be populated by JavaScript -->
+            <div id="project-gallery" class="columns is-multiline is-centered">
+                <!-- Project cards will be injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Support / Call to Action Section -->
+    <section id="support" class="section">
+        <div class="container has-text-centered">
+            <h2 class="title is-2 section-heading">Enjoying these tools?</h2>
+            <div class="columns is-centered">
+                <div class="column is-two-thirds">
+                    <div class="box support-box">
+                        <p class="is-size-5 mb-5">
+                            Your support directly fuels the creation of new projects and the maintenance of existing ones. If you find these resources valuable, please consider making a contribution. Every little bit helps and allows me to dedicate more time to building things that help people like you.
+                        </p>
+                        <div class="buttons is-centered">
+                            <!-- Link this to your "Buy Me A Coffee" or other donation page -->
+                            <a href="https://www.buymeacoffee.com/yourusername" target="_blank" class="button is-primary is-large">
+                                <span class="icon"><i class="fas fa-coffee"></i></span>
+                                <span>One-time Donation</span>
+                            </a>
+                            <a href="https://www.buymeacoffee.com/yourusername/membership" target="_blank" class="button is-primary is-outlined is-large">
+                                <span class="icon"><i class="fas fa-sync-alt"></i></span>
+                                <span>Recurring Support</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container has-text-centered">
+             <h2 class="title is-4">Have Feedback or a Question?</h2>
+             <p class="subtitle is-6">I'd love to hear from you!</p>
+             <a href="mailto:burnsdevfeedback@gmail.com" class="button is-link is-light is-medium">
+                <span class="icon"><i class="fas fa-envelope"></i></span>
+                <span>Email for Support</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>© 2024 Burns Development. All rights reserved.</p>
+            <p>Built with passion by Corey Burns.</p>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+
+    <!-- Vanilla JavaScript for dynamic content -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // --- EASY-TO-UPDATE PROJECT DATA ---
+            // Add your project details to this array.
+            // iconUrl should be a relative path to your icon assets (e.g., 'assets/icons/icon-name.png')
+            const projects = [
+                {
+                    title: 'Project Planner Pro',
+                    tag: 'Template',
+                    githubUrl: 'https://github.com/yourusername/project-planner-pro',
+                    downloadUrl: 'https://github.com/yourusername/project-planner-pro/archive/refs/heads/main.zip',
+                    iconUrl: 'https://via.placeholder.com/64x64/5a2a88/ffffff?text=P',
+                    description: 'A comprehensive Notion template for managing complex projects from start to finish, including timelines, tasks, and resource allocation.'
+                },
+                {
+                    title: 'Markdown Quick-Formatter',
+                    tag: 'Tool',
+                    githubUrl: 'https://github.com/yourusername/markdown-formatter',
+                    downloadUrl: 'https://github.com/yourusername/markdown-formatter',
+                    iconUrl: 'https://via.placeholder.com/64x64/5a2a88/ffffff?text=M',
+                    description: 'A lightweight web tool to quickly format text into clean Markdown for documentation, notes, or blog posts. No installation required.'
+                },
+                {
+                    title: 'Team Meeting Agenda',
+                    tag: 'Template',
+                    githubUrl: 'https://github.com/yourusername/meeting-agenda',
+                    downloadUrl: 'https://github.com/yourusername/meeting-agenda/archive/refs/heads/main.zip',
+                    iconUrl: 'https://via.placeholder.com/64x64/5a2a88/ffffff?text=A',
+                    description: 'A simple yet effective Google Docs template to run structured and productive team meetings, ensuring all key points are covered.'
+                },
+                 {
+                    title: 'Dev Portfolio Page',
+                    tag: 'Template',
+                    githubUrl: 'https://github.com/yourusername/dev-portfolio',
+                    downloadUrl: 'https://github.com/yourusername/dev-portfolio/archive/refs/heads/main.zip',
+                    iconUrl: 'https://via.placeholder.com/64x64/5a2a88/ffffff?text=D',
+                    description: 'A clean, single-page HTML/CSS portfolio template for developers to showcase their work and skills. Fully responsive.'
+                }
+            ];
+
+            const gallery = document.getElementById('project-gallery');
+
+            if (gallery) {
+                // Clear any potential placeholder content
+                gallery.innerHTML = ''; 
+
+                // Check if there are projects to display
+                if(projects.length === 0) {
+                    gallery.innerHTML = `<div class="column"><p class="has-text-centered">No projects to display yet. Check back soon!</p></div>`;
+                    return;
+                }
+
+                // Loop through the projects and generate an HTML card for each one
+                projects.forEach(project => {
+                    // Create the main column div
+                    const column = document.createElement('div');
+                    column.className = 'column is-one-third-desktop is-half-tablet';
+
+                    // Use a template literal for clean HTML creation
+                    column.innerHTML = `
+                        <div class="card project-card">
+                            <div class="card-image has-text-centered">
+                                <figure class="image is-inline-block">
+                                    <img src="${project.iconUrl}" alt="${project.title} icon">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-content">
+                                        <p class="title is-4">${project.title}</p>
+                                        <p class="subtitle is-6"><span class="tag is-info is-light">${project.tag}</span></p>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    ${project.description}
+                                </div>
+                            </div>
+                            <footer class="card-footer">
+                                <a href="${project.githubUrl}" target="_blank" class="card-footer-item">
+                                    <span class="icon mr-2"><i class="fab fa-github"></i></span> GitHub
+                                </a>
+                                <a href="${project.downloadUrl}" target="_blank" class="card-footer-item">
+                                    <span class="icon mr-2"><i class="fas fa-download"></i></span> Download
+                                </a>
+                            </footer>
+                        </div>
+                    `;
+                    gallery.appendChild(column);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
