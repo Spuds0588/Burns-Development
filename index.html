@@ -83,7 +83,14 @@
             margin-bottom: 1rem;
         }
         
-        /* Projects Section */
+        /* --- Projects Section (Grid Layout) --- */
+        #project-gallery {
+            display: grid;
+            /* Creates 1-3 columns depending on viewport width */
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
         .project-card {
             background-color: var(--penn-blue);
             color: var(--white);
@@ -98,7 +105,18 @@
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(12, 27, 73, 0.25);
         }
-        .project-card .card-content { flex-grow: 1; }
+        /* Icon Styling */
+        .project-card .card-image {
+            padding-top: 1.25rem;
+        }
+        .project-card .card-image img {
+            border-radius: 12px; /* Rounded corners for the icon image */
+        }
+
+        .project-card .card-content { 
+            flex-grow: 1;
+            padding-top: 0.5rem; 
+        }
         .project-card .title, .project-card .content { color: var(--white); }
         .project-card .subtitle { color: var(--white); }
         .project-card .tag {
@@ -218,7 +236,8 @@
     <section id="projects" class="section">
         <div class="container">
             <h2 class="title is-2 section-heading has-text-centered">My Projects</h2>
-            <div id="project-gallery" class="columns is-multiline is-centered">
+            <!-- This div is now a CSS Grid container -->
+            <div id="project-gallery">
                 <!-- Project cards will be injected here -->
             </div>
         </div>
@@ -234,8 +253,7 @@
                         Beyond tools, I create video content on YouTube to share insights on product management, productivity, and technology. Check out my latest videos on my channel.
                     </p>
                     <figure class="image is-16by9 mb-5">
-                        <!-- IMPORTANT: Replace this src with a real screenshot of your YouTube page -->
-                        <img src="Assets/20250615 Video Carousel.gif" alt="Screenshot of the Corey Burns YouTube channel">
+                        <img src="Assets/20250615 Video Carousel.gif" alt="Animated gif of YouTube video thumbnails">
                     </figure>
                     <a href="https://youtube.com/@corey_burns" target="_blank" class="button is-primary-action is-large">
                         <span class="icon"><i class="fab fa-youtube"></i></span>
@@ -257,7 +275,6 @@
                             Your support directly fuels the creation of new projects and the maintenance of existing ones. If you find these resources valuable, please consider making a contribution. Every little bit helps and allows me to dedicate more time to building things that help people like you.
                         </p>
                         <div class="buttons is-centered">
-                            <!-- Link this to your "Buy Me A Coffee" or other donation page -->
                             <a href="https://www.buymeacoffee.com/yourusername" target="_blank" class="button is-primary-action is-large">
                                 <span class="icon"><i class="fas fa-coffee"></i></span>
                                 <span>One-time Donation</span>
@@ -300,12 +317,11 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             
-            // --- EASY-TO-UPDATE PROJECT DATA ---
             const projects = [
                 {
                     title: 'Instant Teams Meeting Link',
                     tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/yourusername/instant-teams-link', // <-- UPDATE THIS
+                    githubUrl: 'https://github.com/yourusername/instant-teams-link',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/instant-teams-meeting-lin/mjomgjmgdffokaknimffplhfjhiialep',
                     iconUrl: 'Assets/20250610 Instant Teams Meeting Link - Icon 128_20250615_084219_0000.png', 
                     description: 'Quickly generate and insert a Microsoft Teams meeting link via the right-click menu or popup.',
@@ -314,7 +330,7 @@
                 {
                     title: 'Text to Unicode Formatter',
                     tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/yourusername/unicode-formatter', // <-- UPDATE THIS
+                    githubUrl: 'https://github.com/yourusername/unicode-formatter',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/text-to-unicode-formatter/fakdijijaghmfecglloajigojcgnhpdd',
                     iconUrl: 'Assets/text_to_unicode.png', 
                     description: 'Transform selected text with unicode styles, via right click menu.',
@@ -323,25 +339,25 @@
                 {
                     title: 'Arive Cookie & Cache Cleaner',
                     tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/yourusername/arive-cleaner', // <-- UPDATE THIS
+                    githubUrl: 'https://github.com/yourusername/arive-cleaner',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/arive-cookie-and-cache-cl/fdfbeepemfieoeeahcimjmeipibckcai',
-                    iconUrl: 'Assets/arive_cookie_cleaner.png', // <-- UPDATE THIS
+                    iconUrl: 'Assets/arive_cookie_cleaner.png',
                     description: 'Adds a button to clear cache and cookies on *.myarive.com and its login pages.',
                     downloadButtonText: 'Add to Chrome'
                 },
                 {
                     title: 'CSV QuickView',
                     tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/yourusername/csv-quickview', // <-- UPDATE THIS
+                    githubUrl: 'https://github.com/yourusername/csv-quickview',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/csv-quickview/gcoenalehcoefjbfjgjpkhdfjkjpedai',
-                    iconUrl: 'assets/icon-csv-quickview.png', // <-- UPDATE THIS
+                    iconUrl: 'assets/icon-csv-quickview.png',
                     description: 'Automatically renders local CSV files as a fast, readable table directly in your browser.',
                     downloadButtonText: 'Add to Chrome'
                 },
                 {
                     title: 'Universal Search Parameter Injector',
                     tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/yourusername/param-injector', // <-- UPDATE THIS
+                    githubUrl: 'https://github.com/yourusername/param-injector',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/universal-search-paramete/mipgaemiejdnnaffeniniojohjidaklf',
                     iconUrl: 'Assets/USPI.png', 
                     description: 'Injects URL parameters into page elements. Build URL sequences via popup.',
@@ -350,7 +366,7 @@
                 {
                     title: 'Microsoft Help Remover',
                     tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/yourusername/msft-help-remover', // <-- UPDATE THIS
+                    githubUrl: 'https://github.com/yourusername/msft-help-remover',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/microsoft-help-remover/ccjkcjhombnkhdmcnpfkegldianblani',
                     iconUrl: 'Assets/Hide Microsoft Need Help Extension - Icon - 128px_20250615_084249_0000.png',
                     description: "Removes the 'Need help?' widget on pages containing 'microsoft' in the URL.",
@@ -359,16 +375,16 @@
                 {
                     title: 'M365 Waffle Menu',
                     tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/yourusername/m365-waffle', // <-- UPDATE THIS
+                    githubUrl: 'https://github.com/yourusername/m365-waffle',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/m365-waffle-menu/gpehjlglfibhfgpddoagehnfiodjhcck',
-                    iconUrl: 'assets/icon-m365-waffle.png', // <-- UPDATE THIS
+                    iconUrl: 'assets/icon-m365-waffle.png',
                     description: 'Restores a classic waffle menu to the M365 navigation bar for quick access to all apps.',
                     downloadButtonText: 'Add to Chrome'
                 },
                 {
                     title: 'Universal Arive Merge Tags Inserter',
                     tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/yourusername/arive-merge-tags', // <-- UPDATE THIS
+                    githubUrl: 'https://github.com/yourusername/arive-merge-tags',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/universal-arive-merge-tag/olgokogbjimejmfniepamnmlpmklfbli',
                     iconUrl: 'Assets/Universal Arive Merge Tags Inserter - 128px Icon_20250615_084405_0000.png',
                     description: 'Quickly insert ARIVE-compatible information tags using {{ trigger or right-click.',
@@ -379,7 +395,7 @@
                     tag: 'Tool',
                     githubUrl: 'https://github.com/spuds0588/Sparrow-Offline-CRM',
                     downloadUrl: 'https://spuds0588.github.io/Sparrow-Offline-CRM/',
-                    iconUrl: 'assets/icon-sparrow-crm.png', // <-- UPDATE THIS
+                    iconUrl: 'assets/icon-sparrow-crm.png',
                     description: 'A simple, offline-first CRM tool for managing contacts and notes locally in your browser.',
                     downloadButtonText: 'Visit Tool'
                 },
@@ -388,7 +404,7 @@
                     tag: 'Tool',
                     githubUrl: 'https://github.com/spuds0588/Arive-Dynamic-Document-Generator',
                     downloadUrl: 'https://spuds0588.github.io/Arive-Dynamic-Document-Generator/',
-                    iconUrl: 'assets/icon-arive-doc-gen.png', // <-- UPDATE THIS
+                    iconUrl: 'assets/icon-arive-doc-gen.png',
                     description: 'A tool for generating dynamic documents specifically for the Arive platform.',
                     downloadButtonText: 'Visit Tool'
                 },
@@ -397,7 +413,7 @@
                     tag: 'Tool',
                     githubUrl: 'https://github.com/spuds0588/ReferenceMaterials',
                     downloadUrl: 'https://spuds0588.github.io/ReferenceMaterials/Arive-Task-Bookmarklet-Generator(V4.1).html',
-                    iconUrl: 'assets/icon-arive-bookmarklet.png', // <-- UPDATE THIS
+                    iconUrl: 'assets/icon-arive-bookmarklet.png',
                     description: 'A utility to create custom bookmarklets for automating task creation in Arive.',
                     downloadButtonText: 'Visit Tool'
                 }
@@ -412,16 +428,18 @@
 
             gallery.innerHTML = ''; 
             if(projects.length === 0) {
-                gallery.innerHTML = `<div class="column"><p class="has-text-centered">No projects to display yet. Check back soon!</p></div>`;
+                // This message is now inside the grid, so it needs to be a full-width column
+                gallery.innerHTML = `<div style="grid-column: 1 / -1;"><p class="has-text-centered">No projects to display yet. Check back soon!</p></div>`;
                 return;
             }
 
             projects.forEach(project => {
-                const column = document.createElement('div');
-                column.className = 'column is-one-third-desktop is-half-tablet';
-                column.innerHTML = `
+                // Create a wrapper for the card, which will be the grid item.
+                const gridItem = document.createElement('div');
+                // The card itself is the content of the grid item.
+                gridItem.innerHTML = `
                     <div class="card project-card">
-                        <div class="card-image pt-5">
+                        <div class="card-image has-text-centered">
                             <figure class="image is-64x64 is-inline-block">
                                 <img src="${project.iconUrl}" alt="${project.title} icon">
                             </figure>
@@ -443,7 +461,7 @@
                         </footer>
                     </div>
                 `;
-                gallery.appendChild(column);
+                gallery.appendChild(gridItem);
             });
         }
     </script>
