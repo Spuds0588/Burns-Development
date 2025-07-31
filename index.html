@@ -303,40 +303,103 @@
             // --- EASY-TO-UPDATE PROJECT DATA ---
             const projects = [
                 {
-                    title: 'Project Planner Pro',
-                    tag: 'Template',
-                    githubUrl: 'https://github.com/yourusername/project-planner-pro',
-                    downloadUrl: 'https://github.com/yourusername/project-planner-pro/archive/refs/heads/main.zip',
-                    iconUrl: 'https://via.placeholder.com/64x64/0C1B49/DFE1E8?text=P',
-                    description: 'A comprehensive Notion template for managing complex projects from start to finish.',
-                    downloadButtonText: 'Get Template'
+                    title: 'Instant Teams Meeting Link',
+                    tag: 'Chrome Extension',
+                    githubUrl: 'https://github.com/yourusername/instant-teams-link', // <-- UPDATE THIS
+                    downloadUrl: 'https://chrome.google.com/webstore/detail/instant-teams-meeting-lin/mjomgjmgdffokaknimffplhfjhiialep',
+                    iconUrl: 'assets/icon-instant-teams.png', // <-- UPDATE THIS
+                    description: 'Quickly generate and insert a Microsoft Teams meeting link via the right-click menu or popup.',
+                    downloadButtonText: 'Add to Chrome'
                 },
                 {
-                    title: 'Markdown Quick-Formatter',
+                    title: 'Text to Unicode Formatter',
+                    tag: 'Chrome Extension',
+                    githubUrl: 'https://github.com/yourusername/unicode-formatter', // <-- UPDATE THIS
+                    downloadUrl: 'https://chrome.google.com/webstore/detail/text-to-unicode-formatter/fakdijijaghmfecglloajigojcgnhpdd',
+                    iconUrl: 'assets/icon-unicode.png', // <-- UPDATE THIS
+                    description: 'Transform selected text with unicode styles, via right click menu.',
+                    downloadButtonText: 'Add to Chrome'
+                },
+                {
+                    title: 'Arive Cookie & Cache Cleaner',
+                    tag: 'Chrome Extension',
+                    githubUrl: 'https://github.com/yourusername/arive-cleaner', // <-- UPDATE THIS
+                    downloadUrl: 'https://chrome.google.com/webstore/detail/arive-cookie-and-cache-cl/fdfbeepemfieoeeahcimjmeipibckcai',
+                    iconUrl: 'assets/icon-arive-cleaner.png', // <-- UPDATE THIS
+                    description: 'Adds a button to clear cache and cookies on *.myarive.com and its login pages.',
+                    downloadButtonText: 'Add to Chrome'
+                },
+                {
+                    title: 'CSV QuickView',
+                    tag: 'Chrome Extension',
+                    githubUrl: 'https://github.com/yourusername/csv-quickview', // <-- UPDATE THIS
+                    downloadUrl: 'https://chrome.google.com/webstore/detail/csv-quickview/gcoenalehcoefjbfjgjpkhdfjkjpedai',
+                    iconUrl: 'assets/icon-csv-quickview.png', // <-- UPDATE THIS
+                    description: 'Automatically renders local CSV files as a fast, readable table directly in your browser.',
+                    downloadButtonText: 'Add to Chrome'
+                },
+                {
+                    title: 'Universal Search Parameter Injector',
+                    tag: 'Chrome Extension',
+                    githubUrl: 'https://github.com/yourusername/param-injector', // <-- UPDATE THIS
+                    downloadUrl: 'https://chrome.google.com/webstore/detail/universal-search-paramete/mipgaemiejdnnaffeniniojohjidaklf',
+                    iconUrl: 'assets/icon-param-injector.png', // <-- UPDATE THIS
+                    description: 'Injects URL parameters into page elements. Build URL sequences via popup.',
+                    downloadButtonText: 'Add to Chrome'
+                },
+                {
+                    title: 'Microsoft Help Remover',
+                    tag: 'Chrome Extension',
+                    githubUrl: 'https://github.com/yourusername/msft-help-remover', // <-- UPDATE THIS
+                    downloadUrl: 'https://chrome.google.com/webstore/detail/microsoft-help-remover/ccjkcjhombnkhdmcnpfkegldianblani',
+                    iconUrl: 'assets/icon-msft-remover.png', // <-- UPDATE THIS
+                    description: "Removes the 'Need help?' widget on pages containing 'microsoft' in the URL.",
+                    downloadButtonText: 'Add to Chrome'
+                },
+                {
+                    title: 'M365 Waffle Menu',
+                    tag: 'Chrome Extension',
+                    githubUrl: 'https://github.com/yourusername/m365-waffle', // <-- UPDATE THIS
+                    downloadUrl: 'https://chrome.google.com/webstore/detail/m365-waffle-menu/gpehjlglfibhfgpddoagehnfiodjhcck',
+                    iconUrl: 'assets/icon-m365-waffle.png', // <-- UPDATE THIS
+                    description: 'Restores a classic waffle menu to the M365 navigation bar for quick access to all apps.',
+                    downloadButtonText: 'Add to Chrome'
+                },
+                {
+                    title: 'Universal Arive Merge Tags Inserter',
+                    tag: 'Chrome Extension',
+                    githubUrl: 'https://github.com/yourusername/arive-merge-tags', // <-- UPDATE THIS
+                    downloadUrl: 'https://chrome.google.com/webstore/detail/universal-arive-merge-tag/olgokogbjimejmfniepamnmlpmklfbli',
+                    iconUrl: 'assets/icon-arive-merge.png', // <-- UPDATE THIS
+                    description: 'Quickly insert ARIVE-compatible information tags using {{ trigger or right-click.',
+                    downloadButtonText: 'Add to Chrome'
+                },
+                {
+                    title: 'Sparrow Offline CRM',
                     tag: 'Tool',
-                    githubUrl: 'https://github.com/yourusername/markdown-formatter',
-                    downloadUrl: 'https://yourusername.github.io/markdown-formatter/',
-                    iconUrl: 'https://via.placeholder.com/64x64/0C1B49/DFE1E8?text=M',
-                    description: 'A lightweight web tool to quickly format text into clean Markdown. No installation required.',
+                    githubUrl: 'https://github.com/spuds0588/Sparrow-Offline-CRM',
+                    downloadUrl: 'https://spuds0588.github.io/Sparrow-Offline-CRM/',
+                    iconUrl: 'assets/icon-sparrow-crm.png', // <-- UPDATE THIS
+                    description: 'A simple, offline-first CRM tool for managing contacts and notes locally in your browser.',
                     downloadButtonText: 'Visit Tool'
                 },
                 {
-                    title: 'Team Meeting Agenda',
-                    tag: 'Template',
-                    githubUrl: 'https://github.com/yourusername/meeting-agenda',
-                    downloadUrl: 'https://github.com/yourusername/meeting-agenda/archive/refs/heads/main.zip',
-                    iconUrl: 'https://via.placeholder.com/64x64/0C1B49/DFE1E8?text=A',
-                    description: 'A simple yet effective Google Docs template to run structured and productive team meetings.',
-                    downloadButtonText: 'Download'
+                    title: 'Arive Dynamic Document Generator',
+                    tag: 'Tool',
+                    githubUrl: 'https://github.com/spuds0588/Arive-Dynamic-Document-Generator',
+                    downloadUrl: 'https://spuds0588.github.io/Arive-Dynamic-Document-Generator/',
+                    iconUrl: 'assets/icon-arive-doc-gen.png', // <-- UPDATE THIS
+                    description: 'A tool for generating dynamic documents specifically for the Arive platform.',
+                    downloadButtonText: 'Visit Tool'
                 },
-                 {
-                    title: 'Dev Portfolio Page',
-                    tag: 'Template',
-                    githubUrl: 'https://github.com/yourusername/dev-portfolio',
-                    downloadUrl: 'https://github.com/yourusername/dev-portfolio/archive/refs/heads/main.zip',
-                    iconUrl: 'https://via.placeholder.com/64x64/0C1B49/DFE1E8?text=D',
-                    description: 'A clean, single-page HTML/CSS portfolio template for developers to showcase their work and skills.',
-                    downloadButtonText: 'Get Template'
+                {
+                    title: 'Arive Task Bookmarklet Generator',
+                    tag: 'Tool',
+                    githubUrl: 'https://github.com/spuds0588/ReferenceMaterials',
+                    downloadUrl: 'https://spuds0588.github.io/ReferenceMaterials/Arive-Task-Bookmarklet-Generator(V4.1).html',
+                    iconUrl: 'assets/icon-arive-bookmarklet.png', // <-- UPDATE THIS
+                    description: 'A utility to create custom bookmarklets for automating task creation in Arive.',
+                    downloadButtonText: 'Visit Tool'
                 }
             ];
 
