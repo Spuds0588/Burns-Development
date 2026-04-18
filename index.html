@@ -164,24 +164,7 @@
             background-color: var(--international-klein-blue);
             color: var(--white);
         }
-        .button.is-email-support {
-            background-color: var(--platinum);
-            color: var(--savoy-blue);
-            border-color: transparent;
-            font-weight: 600;
-        }
-        .button.is-email-support:hover {
-            background-color: #cfd2d8;
-            color: var(--penn-blue);
-        }
 
-        /* Support Section */
-        .support-box {
-            background-color: var(--white);
-            border: 2px solid var(--penn-blue);
-            padding: 2.5rem;
-            border-radius: 12px;
-        }
 
         /* Footer */
         .footer {
@@ -218,10 +201,10 @@
                     <div class="column">
                         <h2 class="title is-3 has-text-dark">Hi, I'm Corey Burns.</h2>
                         <p class="is-size-5 has-text-grey-dark">
-                            As a Product Manager and Innovator, I'm passionate about creating solutions that solve real-world problems. Burns Development is my personal collection of tools, templates, and content designed to streamline common tasks and boost productivity.
+                            I like to make modern work painless, and love to build tools that are open source, private, and on device &mdash; so we can focus on our impact, not the friction.
                         </p>
                         <p class="is-size-5 mt-3 has-text-grey-dark">
-                            Everything you see here is built with the goal of being genuinely useful. I hope you find something that helps you in your day-to-day work.
+                            Burns Development is my personal collection of tools and projects designed to streamline your workflow while keeping your data under your control.
                         </p>
                     </div>
                 </div>
@@ -240,37 +223,25 @@
         </div>
     </section>
 
-    <!-- Content Section -->
-    <section id="content" class="section section-alt-bg">
-        <div class="container has-text-centered">
-            <h2 class="title is-2 section-heading">Latest Content & Tutorials</h2>
-            <div class="columns is-centered">
-                <div class="column is-four-fifths">
-                    <p class="subtitle is-5 mb-5">
-                        Beyond tools, I create video content on YouTube to share insights on product management, productivity, and technology. Check out my latest videos on my channel.
-                    </p>
-                    <figure class="image is-16by9 mb-5">
-                        <img src="Assets/20250615 Video Carousel.gif" alt="Animated gif of YouTube video thumbnails">
-                    </figure>
-                    <a href="https://youtube.com/@corey_burns" target="_blank" class="button is-primary-action is-large">
-                        <span class="icon"><i class="fab fa-youtube"></i></span>
-                        <span>Visit My Channel</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     
-    <!-- Contact Section -->
-    <section id="contact" class="section">
+    <!-- Connection Section -->
+    <section id="connect" class="section section-alt-bg">
         <div class="container has-text-centered">
-             <h2 class="title is-4">Have Feedback or a Question?</h2>
-             <p class="subtitle is-6 has-text-grey">I'd love to hear from you!</p>
-             <a href="mailto:burnsdevfeedback@gmail.com" class="button is-email-support is-medium">
-                <span class="icon"><i class="fas fa-envelope"></i></span>
-                <span>Email for Support</span>
-            </a>
+             <h2 class="title is-2 section-heading">Let's Build Together</h2>
+             <p class="subtitle is-5 has-text-grey-dark mb-6">
+                I love building tools that empower people. If you find these projects useful, consider connecting with me on LinkedIn or contributing to the code on GitHub to help make them better for everyone.
+             </p>
+             <div class="buttons is-centered">
+                <a href="https://www.linkedin.com/in/coreytburns/" target="_blank" class="button is-primary-action is-large">
+                    <span class="icon"><i class="fab fa-linkedin"></i></span>
+                    <span>Connect on LinkedIn</span>
+                </a>
+                <a href="https://github.com/Spuds0588" target="_blank" class="button is-secondary-action is-large">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Contribute on GitHub</span>
+                </a>
+             </div>
         </div>
     </section>
 
@@ -291,9 +262,27 @@
             
             const projects = [
                 {
+                    title: 'MailLayer',
+                    tag: 'Chrome Extension',
+                    githubUrl: 'https://github.com/Spuds0588/MailLayer',
+                    downloadUrl: 'https://github.com/Spuds0588/MailLayer',
+                    iconUrl: 'Assets/MailLayer.png',
+                    description: 'A premium browser extension for composing and sending emails directly through Gmail and Outlook APIs with CSP compliance.',
+                    downloadButtonText: 'View on GitHub'
+                },
+                {
+                    title: 'OpenFDD',
+                    tag: 'Identity System',
+                    githubUrl: 'https://github.com/Spuds0588/OpenFDD',
+                    downloadUrl: 'https://github.com/Spuds0588/OpenFDD',
+                    iconUrl: 'Assets/OpenFDD.png', 
+                    description: 'A production-ready did:web identity ecosystem and formatted data document platform for secure, verifiable information exchange.',
+                    downloadButtonText: 'View on GitHub'
+                },
+                {
                     title: 'Instant Teams Meeting Link',
                     tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/yourusername/instant-teams-link',
+                    githubUrl: 'https://github.com/Spuds0588/instant-teams-link',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/instant-teams-meeting-lin/mjomgjmgdffokaknimffplhfjhiialep',
                     iconUrl: 'Assets/20250610 Instant Teams Meeting Link - Icon 128_20250615_084219_0000.png', 
                     description: 'Quickly generate and insert a Microsoft Teams meeting link via the right-click menu or popup.',
@@ -302,7 +291,7 @@
                 {
                     title: 'Text to Unicode Formatter',
                     tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/yourusername/unicode-formatter',
+                    githubUrl: 'https://github.com/Spuds0588/unicode-formatter',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/text-to-unicode-formatter/fakdijijaghmfecglloajigojcgnhpdd',
                     iconUrl: 'Assets/text_to_unicode.png', 
                     description: 'Transform selected text with unicode styles, via right click menu.',
@@ -311,7 +300,7 @@
                 {
                     title: 'Arive Cookie & Cache Cleaner',
                     tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/yourusername/arive-cleaner',
+                    githubUrl: 'https://github.com/Spuds0588/arive-cleaner',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/arive-cookie-and-cache-cl/fdfbeepemfieoeeahcimjmeipibckcai',
                     iconUrl: 'Assets/arive_cookie_cleaner.png',
                     description: 'Adds a button to clear cache and cookies on *.myarive.com and its login pages.',
@@ -320,16 +309,16 @@
                 {
                     title: 'CSV QuickView',
                     tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/yourusername/csv-quickview',
+                    githubUrl: 'https://github.com/Spuds0588/csv-quickview',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/csv-quickview/gcoenalehcoefjbfjgjpkhdfjkjpedai',
-                    iconUrl: 'assets/icon-csv-quickview.png',
+                    iconUrl: 'Assets/CSV-Quickview.png',
                     description: 'Automatically renders local CSV files as a fast, readable table directly in your browser.',
                     downloadButtonText: 'Add to Chrome'
                 },
                 {
                     title: 'Universal Search Parameter Injector',
                     tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/yourusername/param-injector',
+                    githubUrl: 'https://github.com/Spuds0588/param-injector',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/universal-search-paramete/mipgaemiejdnnaffeniniojohjidaklf',
                     iconUrl: 'Assets/USPI.png', 
                     description: 'Injects URL parameters into page elements. Build URL sequences via popup.',
@@ -338,7 +327,7 @@
                 {
                     title: 'Microsoft Help Remover',
                     tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/yourusername/msft-help-remover',
+                    githubUrl: 'https://github.com/Spuds0588/msft-help-remover',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/microsoft-help-remover/ccjkcjhombnkhdmcnpfkegldianblani',
                     iconUrl: 'Assets/Hide Microsoft Need Help Extension - Icon - 128px_20250615_084249_0000.png',
                     description: "Removes the 'Need help?' widget on pages containing 'microsoft' in the URL.",
@@ -347,16 +336,16 @@
                 {
                     title: 'M365 Waffle Menu',
                     tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/yourusername/m365-waffle',
+                    githubUrl: 'https://github.com/Spuds0588/m365-waffle',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/m365-waffle-menu/gpehjlglfibhfgpddoagehnfiodjhcck',
-                    iconUrl: 'assets/M365-Waffle-Menu-Extension.png',
+                    iconUrl: 'Assets/M365-Waffle-Menu-Extension.png',
                     description: 'Restores a classic waffle menu to the M365 navigation bar for quick access to all apps.',
                     downloadButtonText: 'Add to Chrome'
                 },
                 {
                     title: 'Universal Arive Merge Tags Inserter',
                     tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/yourusername/arive-merge-tags',
+                    githubUrl: 'https://github.com/Spuds0588/arive-merge-tags',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/universal-arive-merge-tag/olgokogbjimejmfniepamnmlpmklfbli',
                     iconUrl: 'Assets/Universal Arive Merge Tags Inserter - 128px Icon_20250615_084405_0000.png',
                     description: 'Quickly insert ARIVE-compatible information tags using {{ trigger or right-click.',
@@ -367,7 +356,7 @@
                     tag: 'Tool',
                     githubUrl: 'https://github.com/spuds0588/Sparrow-Offline-CRM',
                     downloadUrl: 'https://spuds0588.github.io/Sparrow-Offline-CRM/',
-                    iconUrl: 'assets/Sparrow-Offline-CRM.svg',
+                    iconUrl: 'Assets/Sparrow-Offline-CRM.svg',
                     description: 'A simple, offline-first CRM tool for managing contacts and notes locally in your browser.',
                     downloadButtonText: 'Visit Tool'
                 },
@@ -376,7 +365,7 @@
                     tag: 'Tool',
                     githubUrl: 'https://github.com/spuds0588/Arive-Dynamic-Document-Generator',
                     downloadUrl: 'https://spuds0588.github.io/Arive-Dynamic-Document-Generator/',
-                    iconUrl: 'assets/Arive-Dynamic-Document-Generator.png',
+                    iconUrl: 'Assets/Arive-Dynamic-Document-Generator.png',
                     description: 'A tool for generating dynamic documents specifically for the Arive platform.',
                     downloadButtonText: 'Visit Tool'
                 },
@@ -385,7 +374,7 @@
                     tag: 'Tool',
                     githubUrl: 'https://github.com/spuds0588/ReferenceMaterials',
                     downloadUrl: 'https://spuds0588.github.io/ReferenceMaterials/Arive-Task-Bookmarklet-Generator(V4.1).html',
-                    iconUrl: 'assets/Arive-Tasks-Bookmarklet-Logo-raw.png',
+                    iconUrl: 'Assets/Arive-Tasks-Bookmarklet-Logo-raw.png',
                     description: 'A utility to create custom bookmarklets for automating task creation in Arive.',
                     downloadButtonText: 'Visit Tool'
                 }
