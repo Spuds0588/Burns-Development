@@ -34,21 +34,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     
     <style>
-        /* Modern Premium Aesthetic */
+        /* Modern Premium Dark Aesthetic */
         :root {
-            --penn-blue: #0C1B49;
-            --international-klein-blue: #232F9F;
-            --savoy-blue: #5964A6;
-            --bg-light: #FAFAFC;
-            --white: #ffffff;
-            --text-main: #111827;
-            --text-muted: #4B5563;
-            --border-light: rgba(0,0,0,0.06);
+            --bg-dark: #0B0F19; /* Deep space dark blue/black */
+            --bg-card: #151D2E; /* Slightly elevated dark */
+            --bg-card-hover: #1A2438;
+            --accent-blue: #3B82F6; /* Brighter blue for actions on dark bg */
+            --accent-hover: #60A5FA;
+            
+            --text-main: #F3F4F6; /* Off-white */
+            --text-muted: #9CA3AF; /* Light gray */
+            --border-light: rgba(255,255,255,0.08);
         }
 
         html { scroll-behavior: smooth; }
         body {
-            background-color: var(--bg-light);
+            background-color: var(--bg-dark);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
@@ -57,72 +58,48 @@
         h1, h2, h3, h4, h5, h6, .title {
             font-family: 'Outfit', sans-serif !important;
             letter-spacing: -0.02em;
+            color: var(--text-main) !important;
         }
 
-        /* Sleek Hero Section */
-        .hero.is-branded {
-            background-color: var(--penn-blue);
-            position: relative;
-            overflow: hidden;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        /* Subtle glow effect behind the text */
-        .hero.is-branded::before {
-            content: '';
-            position: absolute;
-            top: 50%; left: 50%; width: 150%; height: 150%;
-            transform: translate(-50%, -50%);
-            background: radial-gradient(circle, rgba(89,100,166,0.15) 0%, rgba(12,27,73,0) 60%);
-            pointer-events: none;
-        }
-        .hero-body { padding: 7rem 1.5rem; position: relative; z-index: 1;}
-        .hero .title { 
-            font-weight: 800; font-size: 4rem; letter-spacing: -0.04em; 
-            color: var(--white); margin-bottom: 1.5rem; 
-        }
-        .hero .subtitle { 
-            font-family: 'Inter', sans-serif; font-size: 1.25rem; font-weight: 400; 
-            color: rgba(255,255,255,0.8); max-width: 650px; margin: 0 auto; line-height: 1.6;
-        }
-        
         /* Clean Sections */
         .section-heading {
             font-size: 2.5rem; margin-bottom: 3rem; 
-            color: var(--penn-blue); font-weight: 700; text-align: center;
+            font-weight: 700; text-align: center;
         }
         
-        /* About Section (Removed heavy box, open clean layout) */
-        #about { padding: 6rem 1.5rem; background: var(--white); border-bottom: 1px solid var(--border-light); }
+        /* About Section */
+        #about { padding: 8rem 1.5rem 4rem 1.5rem; border-bottom: 1px solid var(--border-light); }
         .about-container { max-width: 900px; margin: 0 auto; }
         .headshot {
-            width: 160px; height: 160px; 
+            width: 180px; height: 180px; 
             border-radius: 32px; /* Modern Squircle look */
             object-fit: cover; 
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
-            margin-bottom: 1.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5), 0 10px 10px -5px rgba(0,0,0,0.3);
+            border: 2px solid rgba(255,255,255,0.05);
         }
-        .about-text { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 1.25rem; }
+        .about-text { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.8;}
 
         /* Modern Project Cards */
-        #projects { padding: 6rem 1.5rem; }
+        #projects { padding: 4rem 1.5rem 6rem 1.5rem; }
         #project-gallery {
             display: grid; gap: 3rem; max-width: 960px; margin: 0 auto;
         }
         
         .project-card {
-            background: var(--white);
+            background: var(--bg-card);
             border-radius: 24px;
             padding: 3rem;
             display: flex;
             gap: 3.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03), 0 2px 4px -1px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2);
             border: 1px solid var(--border-light);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .project-card:hover {
             transform: translateY(-4px) scale(1.005);
-            box-shadow: 0 25px 50px -12px rgba(12,27,73,0.15);
-            border-color: rgba(89,100,166,0.2);
+            background: var(--bg-card-hover);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            border-color: rgba(59, 130, 246, 0.3);
         }
         
         /* Sidebar (Icon + Badges) */
@@ -132,19 +109,19 @@
         }
         .card-sidebar img {
             width: 90px; height: 90px; border-radius: 20px;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5);
             margin-bottom: 1.5rem;
         }
         .project-tag { 
             display: inline-block; padding: 0.35rem 0.85rem; 
-            background: #F3F4F6; color: var(--text-muted);
+            background: rgba(59, 130, 246, 0.15); color: var(--accent-blue);
             font-size: 0.75rem; font-weight: 600; border-radius: 9999px; 
             text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;
         }
 
         /* Main Content */
         .card-main { flex-grow: 1; display: flex; flex-direction: column; }
-        .project-title { font-size: 1.85rem; font-weight: 700; color: var(--penn-blue); margin-bottom: 1rem; }
+        .project-title { font-size: 1.85rem; font-weight: 700; color: var(--text-main); margin-bottom: 1rem; }
         .project-desc { font-size: 1.05rem; color: var(--text-muted); line-height: 1.7; flex-grow: 1; }
         .project-desc p { margin-bottom: 1rem; }
         .project-desc p:last-child { margin-bottom: 0; }
@@ -158,19 +135,20 @@
             font-family: 'Inter', sans-serif;
         }
         .btn-primary { 
-            background: var(--penn-blue); color: var(--white); 
-            box-shadow: 0 4px 6px -1px rgba(12,27,73,0.2);
+            background: var(--accent-blue); color: #ffffff !important; 
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);
+            border: 1px solid transparent;
         }
         .btn-primary:hover { 
-            background: var(--international-klein-blue); transform: translateY(-2px); 
-            box-shadow: 0 10px 15px -3px rgba(35,47,159,0.3); color: var(--white);
+            background: var(--accent-hover); transform: translateY(-2px); 
+            box-shadow: 0 10px 15px -3px rgba(59,130,246,0.3);
         }
         .btn-secondary { 
-            background: transparent; color: var(--text-main); 
-            border: 1px solid #D1D5DB; 
+            background: transparent; color: var(--text-main) !important; 
+            border: 1px solid var(--border-light); 
         }
         .btn-secondary:hover { 
-            background: #F3F4F6; color: var(--penn-blue); border-color: #9CA3AF;
+            background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2);
         }
 
         /* Responsive */
@@ -183,36 +161,23 @@
         }
 
         /* Connection Section */
-        #connect { background-color: var(--white); padding: 6rem 1.5rem; border-top: 1px solid var(--border-light); }
+        #connect { background-color: var(--bg-card); padding: 6rem 1.5rem; border-top: 1px solid var(--border-light); }
 
         /* Footer */
         .footer {
-            background-color: var(--bg-light); color: var(--text-muted);
+            background-color: var(--bg-dark); color: var(--text-muted);
             border-top: 1px solid var(--border-light); padding: 4rem 1.5rem;
         }
     </style>
 </head>
 <body>
-    <!-- Header/Hero Section -->
-    <header class="hero is-branded">
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <h1 class="title">Corey Burns</h1>
-                <h2 class="subtitle">
-                    Engineering seamless workflows and frictionless tools.
-                </h2>
-            </div>
-        </div>
-    </header>
-
-    <!-- About Section -->
     <main>
+    <!-- About Section (No titles, content speaks for itself) -->
     <section id="about">
         <div class="container about-container">
             <div class="columns is-vcentered">
                 <div class="column is-4 has-text-centered pr-5">
                     <img src="Assets/Linkedin Headshot.png" alt="Corey Burns" class="headshot">
-                    <h2 class="title is-3 has-text-dark mb-1">Corey Burns</h2>
                 </div>
                 <div class="column is-8">
                     <p class="about-text">
@@ -232,7 +197,6 @@
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
-            <h2 class="section-heading">The Portfolio</h2>
             <div id="project-gallery">
                 <!-- Injected via JS -->
             </div>
@@ -242,8 +206,7 @@
     <!-- Connection Section -->
     <section id="connect">
         <div class="container has-text-centered">
-             <h2 class="section-heading" style="margin-bottom: 1.5rem;">Let's Connect</h2>
-             <p class="is-size-5 has-text-grey mb-6" style="max-width: 700px; margin: 0 auto; line-height: 1.6;">
+             <p class="is-size-5 mb-6" style="max-width: 700px; margin: 0 auto; line-height: 1.6; color: var(--text-muted);">
                 I am constantly exploring new ways to improve business workflows. Connect with me on LinkedIn to follow my latest projects, or check out my open-source work on GitHub.
              </p>
              <div class="btn-group" style="justify-content: center; margin-top: 3rem;">
@@ -272,6 +235,7 @@
         document.getElementById('year').textContent = new Date().getFullYear();
 
         document.addEventListener('DOMContentLoaded', function () {
+            // Re-constructing the projects array, ensuring all quotes are properly escaped to prevent SyntaxErrors.
             const projects = [
                 {
                     title: 'MailLayer',
@@ -279,7 +243,7 @@
                     githubUrl: 'https://github.com/Spuds0588/MailLayer',
                     downloadUrl: 'https://github.com/Spuds0588/MailLayer',
                     iconUrl: 'Assets/MailLayer.png',
-                    description: 'Professionals often lose valuable time context-switching between web applications and clunky desktop email clients just to send routine messages. MailLayer intercepts mailto: links, injecting a native, CSP-compliant email composer directly into the current webpage. By enabling direct API sending via Gmail and Outlook, it entirely eliminates context-switching and keeps you focused on your active workspace.',
+                    description: "Professionals often lose valuable time context-switching between web applications and clunky desktop email clients just to send routine messages. MailLayer intercepts mailto: links, injecting a native, CSP-compliant email composer directly into the current webpage. By enabling direct API sending via Gmail and Outlook, it entirely eliminates context-switching and keeps you focused on your active workspace.",
                     downloadButtonText: 'View on GitHub'
                 },
                 {
@@ -288,7 +252,7 @@
                     githubUrl: 'https://github.com/Spuds0588/open-fdd',
                     downloadUrl: 'https://github.com/Spuds0588/open-fdd',
                     iconUrl: 'Assets/OpenFDD.png', 
-                    description: 'Static PDFs trap critical business data, forcing organizations to rely on fragile OCR technology or manual data entry. OpenFDD provides an open specification that replaces visual-first PDFs with interactive, cryptographically verified JSON-LD data containers bound inside a zero-JS HTML layer. This guarantees seamless, secure system-to-system data exchange while maintaining perfect human readability and tamper-evident security.',
+                    description: "Static PDFs trap critical business data, forcing organizations to rely on fragile OCR technology or manual data entry. OpenFDD provides an open specification that replaces visual-first PDFs with interactive, cryptographically verified JSON-LD data containers bound inside a zero-JS HTML layer. This guarantees seamless, secure system-to-system data exchange while maintaining perfect human readability and tamper-evident security.",
                     downloadButtonText: 'View on GitHub'
                 },
                 {
@@ -297,7 +261,7 @@
                     githubUrl: 'https://github.com/Spuds0588/Sparrow-Offline-CRM',
                     downloadUrl: 'https://spuds0588.github.io/Sparrow-Offline-CRM/',
                     iconUrl: 'Assets/Sparrow-Offline-CRM.png',
-                    description: 'Traditional cloud CRMs are often overly complex and require individuals to surrender control of their proprietary contact data to third parties. Sparrow is a private, portable, "offline-first" CRM engineered to run entirely within a single, local HTML file using modern browser File System APIs. It delivers robust relationship management with zero infrastructure, zero cost, and absolute data ownership.',
+                    description: "Traditional cloud CRMs are often overly complex and require individuals to surrender control of their proprietary contact data to third parties. Sparrow is a private, portable, \"offline-first\" CRM engineered to run entirely within a single, local HTML file using modern browser File System APIs. It delivers robust relationship management with zero infrastructure, zero cost, and absolute data ownership.",
                     downloadButtonText: 'Try Application'
                 },
                 {
@@ -306,7 +270,7 @@
                     githubUrl: 'https://github.com/Spuds0588/CSV-Quickview',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/csv-quickview/gcoenalehcoefjbfjgjpkhdfjkjpedai',
                     iconUrl: 'Assets/CSV-Quickview.png',
-                    description: 'Opening a simple CSV file shouldn\'t trigger a slow, heavy spreadsheet application that disrupts your focus just for a quick data check. This high-performance extension intercepts local .csv files and instantly renders them in the browser. Complete with sticky headers and dark mode, it turns your browser into a blazingly fast data viewer to accelerate routine data validation.',
+                    description: "Opening a simple CSV file shouldn't trigger a slow, heavy spreadsheet application that disrupts your focus just for a quick data check. This high-performance extension intercepts local .csv files and instantly renders them in the browser. Complete with sticky headers and dark mode, it turns your browser into a blazingly fast data viewer to accelerate routine data validation.",
                     downloadButtonText: 'Add to Chrome'
                 },
                 {
@@ -315,7 +279,7 @@
                     githubUrl: 'https://github.com/Spuds0588/Instant-Teams-Meeting-Link-Extension',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/instant-teams-meeting-lin/mjomgjmgdffokaknimffplhfjhiialep',
                     iconUrl: 'Assets/20250610 Instant Teams Meeting Link - Icon 128_20250615_084219_0000.png', 
-                    description: 'Creating impromptu Teams meetings typically involves navigating away from your current task, clicking through multiple menus, and manually copying links. This lightweight extension securely generates and inserts a Microsoft Teams meeting link via a single right-click context menu. By integrating meeting generation seamlessly into any text field, it saves clicks and maintains your momentum.',
+                    description: "Creating impromptu Teams meetings typically involves navigating away from your current task, clicking through multiple menus, and manually copying links. This lightweight extension securely generates and inserts a Microsoft Teams meeting link via a single right-click context menu. By integrating meeting generation seamlessly into any text field, it saves clicks and maintains your momentum.",
                     downloadButtonText: 'Add to Chrome'
                 },
                 {
@@ -324,7 +288,7 @@
                     githubUrl: 'https://github.com/Spuds0588/Arive-Cookie-and-Cache-Cleaner',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/arive-cookie-and-cache-cl/fdfbeepemfieoeeahcimjmeipibckcai',
                     iconUrl: 'Assets/arive_cookie_cleaner.png',
-                    description: 'The Arive LOS is a powerful core system for mortgage professionals, but like any complex platform, it can occasionally encounter stale cache issues that halt productivity. This targeted extension provides a single-click button for originators to clear relevant cookies specifically for the Arive environment. It empowers non-technical users to self-resolve login and state issues instantly, keeping the loan file moving without waiting on IT support.',
+                    description: "The Arive LOS is a powerful core system for mortgage professionals, but like any complex platform, it can occasionally encounter stale cache issues that halt productivity. This targeted extension provides a single-click button for originators to clear relevant cookies specifically for the Arive environment. It empowers non-technical users to self-resolve login and state issues instantly, keeping the loan file moving without waiting on IT support.",
                     downloadButtonText: 'Add to Chrome'
                 },
                 {
@@ -333,7 +297,7 @@
                     githubUrl: 'https://github.com/Spuds0588/Universal-Arive-Merge-Tags-Inserter',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/universal-arive-merge-tag/olgokogbjimejmfniepamnmlpmklfbli',
                     iconUrl: 'Assets/Universal Arive Merge Tags Inserter - 128px Icon_20250615_084405_0000.png',
-                    description: 'Originators often prefer to build HTML email templates outside of the Arive LOS in a dedicated email builder, but lose access to Arive\\'s specific data tags. This insertion tool provides native-like access to the entire Arive merge tag catalog via a simple {{ trigger or right-click menu, creating a seamless copy-paste-save workflow for importing external templates back into the LOS with perfect data mapping.',
+                    description: "Originators often prefer to build HTML email templates outside of the Arive LOS in a dedicated email builder, but lose access to Arive's specific data tags. This insertion tool provides native-like access to the entire Arive merge tag catalog via a simple {{ trigger or right-click menu, creating a seamless copy-paste-save workflow for importing external templates back into the LOS with perfect data mapping.",
                     downloadButtonText: 'Add to Chrome'
                 },
                 {
@@ -342,7 +306,7 @@
                     githubUrl: 'https://github.com/Spuds0588/Arive-Dynamic-Document-Generator',
                     downloadUrl: 'https://spuds0588.github.io/Arive-Dynamic-Document-Generator/',
                     iconUrl: 'Assets/Arive-Dynamic-Document-Generator.png',
-                    description: 'The Arive LOS lacks an easy way to generate, populate, and send highly customized external documents using existing automation rules. This browser-based SPA empowers non-technical originators to visually design self-contained HTML templates. Once hosted, you simply link the document in your Arive email templates with appended URL parameters. The end borrower receives a secure link to a dynamic, PDF-downloadable document filled instantly with their relevant loan data.',
+                    description: "The Arive LOS lacks an easy way to generate, populate, and send highly customized external documents using existing automation rules. This browser-based SPA empowers non-technical originators to visually design self-contained HTML templates. Once hosted, you simply link the document in your Arive email templates with appended URL parameters. The end borrower receives a secure link to a dynamic, PDF-downloadable document filled instantly with their relevant loan data.",
                     downloadButtonText: 'Try Application'
                 },
                 {
@@ -351,7 +315,7 @@
                     githubUrl: 'https://github.com/Spuds0588/ReferenceMaterials',
                     downloadUrl: 'https://spuds0588.github.io/ReferenceMaterials/Arive-Task-Bookmarklet-Generator(V4.1).html',
                     iconUrl: 'Assets/Arive-Tasks-Bookmarklet-Logo-raw.png',
-                    description: 'Originators frequently perform repetitive, multi-click actions within the Arive LOS to manage their pipeline. This utility allows users to visually construct custom JavaScript bookmarklets that automate interactions directly within the Arive UI. By deploying low-code automation straight to the browser\'s bookmark bar, professionals can execute complex task sequences in a single click.',
+                    description: "Assigning multiple tasks individually in the Arive LOS is repetitive, and native user-level automation requires a costly Pro-level account. This utility allows originators to generate a custom JavaScript bookmarklet that assigns multiple tasks to themselves all at once. By deploying this automation directly to the browser's bookmark bar, users can bypass manual clicks and upgrade their task workflow without needing a premium account.",
                     downloadButtonText: 'Try Application'
                 }
             ];
