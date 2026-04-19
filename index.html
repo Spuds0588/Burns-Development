@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corey Burns | Business Innovator & Process Engineer</title>
-    <meta name="description" content="Portfolio of Corey Burns. Solving modern business problems through process engineering and the tactical application of technology to eliminate friction.">
+    <title>Corey Burns | Engineering Frictionless Workflows</title>
+    <meta name="description" content="Portfolio of Corey Burns. Engineering seamless workflows and tactically applying technology to eliminate business friction.">
     
     <!-- OpenGraph / Social Meta Tags -->
-    <meta property="og:title" content="Corey Burns | Business Innovator & Technologist">
-    <meta property="og:description" content="I make work feel painless by removing friction through process engineering and tactical technology. Explore my tools and frameworks.">
+    <meta property="og:title" content="Corey Burns | Engineering Frictionless Workflows">
+    <meta property="og:description" content="Software should adapt to how people work. Explore my portfolio of tools designed to eliminate operational friction and make work feel effortless.">
     <meta property="og:type" content="website">
     
     <!-- JSON-LD for AEO/SEO -->
@@ -17,258 +17,222 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Corey Burns",
-      "jobTitle": "Business Innovator & Process Engineer",
       "url": "https://spuds0588.github.io/Burns-Development/",
       "sameAs": [
         "https://www.linkedin.com/in/coreytburns/",
         "https://github.com/Spuds0588"
       ],
-      "knowsAbout": ["Process Engineering", "Software Development", "Mortgage Technology", "Business Innovation"]
+      "knowsAbout": ["Process Engineering", "Software Development", "Mortgage Technology", "Business Innovation", "Workflow Automation"]
     }
     </script>
 
     <link rel="icon" href="Assets/favicon.jpg" type="image/jpeg">
+    <!-- Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    
     <style>
-        /* Burns Development - Custom Blue Brand Theme */
+        /* Modern Premium Aesthetic */
         :root {
-            --savoy-blue: #5964A6;
             --penn-blue: #0C1B49;
-            --platinum: #DFE1E8;
-            --resolution-blue: #182575;
             --international-klein-blue: #232F9F;
+            --savoy-blue: #5964A6;
+            --bg-light: #FAFAFC;
             --white: #ffffff;
-            --text-dark: var(--penn-blue);
+            --text-main: #111827;
+            --text-muted: #4B5563;
+            --border-light: rgba(0,0,0,0.06);
         }
 
         html { scroll-behavior: smooth; }
         body {
-            background-color: var(--platinum);
-            color: var(--text-dark);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
         }
 
-        /* Hero Section */
+        h1, h2, h3, h4, h5, h6, .title {
+            font-family: 'Outfit', sans-serif !important;
+            letter-spacing: -0.02em;
+        }
+
+        /* Sleek Hero Section */
         .hero.is-branded {
-            background: linear-gradient(90deg, var(--international-klein-blue), var(--resolution-blue));
-        }
-        .hero.is-branded .title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--white);
-        }
-        .hero.is-branded .subtitle {
-            font-size: 1.5rem;
-            color: var(--white);
-            opacity: 0.9;
-        }
-        
-        /* General Styles & Sections */
-        .section-heading {
-            font-size: 2.5rem;
-            margin-bottom: 2.5rem;
-            color: var(--text-dark);
-            font-weight: 700;
-        }
-        .section.section-alt-bg { background-color: var(--white); }
-
-        /* About & Philosophy Section */
-        #about .box {
-            background-color: var(--white);
-            box-shadow: 0 8px 24px rgba(12, 27, 73, 0.08);
-            border: 1px solid var(--platinum);
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 3.5rem 3rem;
-            border-radius: 12px;
-        }
-        .headshot {
-            max-width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1rem;
-            border: 4px solid var(--platinum);
-        }
-        
-        /* --- Projects Section (Modern Large Cards) --- */
-        #project-gallery {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2.5rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .project-card {
-            background-color: var(--white);
-            color: var(--text-dark);
-            border-radius: 12px;
-            display: flex;
-            flex-direction: row;
-            box-shadow: 0 10px 30px rgba(12, 27, 73, 0.08);
-            border: 1px solid var(--platinum);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: var(--penn-blue);
+            position: relative;
             overflow: hidden;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        @media(max-width: 768px) {
-            .project-card { flex-direction: column; }
-            .project-card .card-sidebar { min-width: 100%; border-right: none; border-bottom: 4px solid var(--savoy-blue); }
+        /* Subtle glow effect behind the text */
+        .hero.is-branded::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%; width: 150%; height: 150%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(89,100,166,0.15) 0%, rgba(12,27,73,0) 60%);
+            pointer-events: none;
+        }
+        .hero-body { padding: 7rem 1.5rem; position: relative; z-index: 1;}
+        .hero .title { 
+            font-weight: 800; font-size: 4rem; letter-spacing: -0.04em; 
+            color: var(--white); margin-bottom: 1.5rem; 
+        }
+        .hero .subtitle { 
+            font-family: 'Inter', sans-serif; font-size: 1.25rem; font-weight: 400; 
+            color: rgba(255,255,255,0.8); max-width: 650px; margin: 0 auto; line-height: 1.6;
+        }
+        
+        /* Clean Sections */
+        .section-heading {
+            font-size: 2.5rem; margin-bottom: 3rem; 
+            color: var(--penn-blue); font-weight: 700; text-align: center;
+        }
+        
+        /* About Section (Removed heavy box, open clean layout) */
+        #about { padding: 6rem 1.5rem; background: var(--white); border-bottom: 1px solid var(--border-light); }
+        .about-container { max-width: 900px; margin: 0 auto; }
+        .headshot {
+            width: 160px; height: 160px; 
+            border-radius: 32px; /* Modern Squircle look */
+            object-fit: cover; 
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            margin-bottom: 1.5rem;
+        }
+        .about-text { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 1.25rem; }
+
+        /* Modern Project Cards */
+        #projects { padding: 6rem 1.5rem; }
+        #project-gallery {
+            display: grid; gap: 3rem; max-width: 960px; margin: 0 auto;
+        }
+        
+        .project-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 3rem;
+            display: flex;
+            gap: 3.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03), 0 2px 4px -1px rgba(0,0,0,0.02);
+            border: 1px solid var(--border-light);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(12, 27, 73, 0.15);
+            transform: translateY(-4px) scale(1.005);
+            box-shadow: 0 25px 50px -12px rgba(12,27,73,0.15);
+            border-color: rgba(89,100,166,0.2);
         }
         
-        /* Icon/Sidebar Styling */
-        .project-card .card-sidebar {
-            background-color: var(--penn-blue);
-            padding: 2.5rem 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-width: 300px;
-            max-width: 300px;
-            border-right: 4px solid var(--savoy-blue);
+        /* Sidebar (Icon + Badges) */
+        .card-sidebar {
+            width: 120px; flex-shrink: 0;
+            display: flex; flex-direction: column; align-items: flex-start;
         }
-        .project-card .card-sidebar img {
-            border-radius: 16px;
-            width: 112px;
-            height: 112px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        .project-card .card-sidebar .title { color: var(--white); text-align: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .project-card .card-sidebar .tag {
-            background-color: var(--savoy-blue);
-            color: var(--white);
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-align: center;
-            height: auto;
-            white-space: normal;
-        }
-        
-        /* Main Content Area */
-        .project-card .card-main { 
-            flex-grow: 1;
-            padding: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .project-card .problem-solution { flex-grow: 1; }
-        
-        .project-card h4.label-heading {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            color: var(--savoy-blue);
-            margin-bottom: 0.4rem;
-            font-weight: 700;
-        }
-        .project-card .content-text {
-            color: #333;
-            font-size: 1.05rem;
-            line-height: 1.6;
+        .card-sidebar img {
+            width: 90px; height: 90px; border-radius: 20px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
             margin-bottom: 1.5rem;
         }
-        .project-card .impact-text {
-            font-weight: 600;
-            color: var(--international-klein-blue);
-            background-color: #f5f6fa;
-            padding: 1rem;
-            border-left: 4px solid var(--international-klein-blue);
-            border-radius: 0 8px 8px 0;
-            margin-bottom: 0;
-        }
-        
-        .project-card .card-actions {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--platinum);
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+        .project-tag { 
+            display: inline-block; padding: 0.35rem 0.85rem; 
+            background: #F3F4F6; color: var(--text-muted);
+            font-size: 0.75rem; font-weight: 600; border-radius: 9999px; 
+            text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;
         }
 
-        /* Button Styles */
-        .button.is-primary-action {
-            background-color: var(--international-klein-blue);
-            color: var(--white);
-            border-color: transparent;
-            font-weight: 600;
+        /* Main Content */
+        .card-main { flex-grow: 1; display: flex; flex-direction: column; }
+        .project-title { font-size: 1.85rem; font-weight: 700; color: var(--penn-blue); margin-bottom: 1rem; }
+        .project-desc { font-size: 1.05rem; color: var(--text-muted); line-height: 1.7; flex-grow: 1; }
+        .project-desc p { margin-bottom: 1rem; }
+        .project-desc p:last-child { margin-bottom: 0; }
+
+        /* Modern Buttons */
+        .btn-group { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;}
+        .btn {
+            padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 600; font-size: 0.95rem;
+            display: inline-flex; align-items: center; gap: 0.5rem; 
+            transition: all 0.2s ease; cursor: pointer; text-decoration: none;
+            font-family: 'Inter', sans-serif;
         }
-        .button.is-primary-action:hover {
-            background-color: var(--resolution-blue);
-            color: var(--white);
+        .btn-primary { 
+            background: var(--penn-blue); color: var(--white); 
+            box-shadow: 0 4px 6px -1px rgba(12,27,73,0.2);
         }
-        .button.is-secondary-action {
-            background-color: transparent;
-            border-color: var(--international-klein-blue);
-            color: var(--international-klein-blue);
-            font-weight: 600;
+        .btn-primary:hover { 
+            background: var(--international-klein-blue); transform: translateY(-2px); 
+            box-shadow: 0 10px 15px -3px rgba(35,47,159,0.3); color: var(--white);
         }
-        .button.is-secondary-action:hover {
-            background-color: var(--international-klein-blue);
-            color: var(--white);
+        .btn-secondary { 
+            background: transparent; color: var(--text-main); 
+            border: 1px solid #D1D5DB; 
         }
+        .btn-secondary:hover { 
+            background: #F3F4F6; color: var(--penn-blue); border-color: #9CA3AF;
+        }
+
+        /* Responsive */
+        @media(max-width: 768px) {
+            .project-card { flex-direction: column; gap: 1.5rem; padding: 2rem; }
+            .card-sidebar { width: 100%; flex-direction: row; align-items: center; justify-content: space-between; }
+            .card-sidebar img { margin-bottom: 0; width: 72px; height: 72px; }
+            .card-sidebar .tags { display: flex; flex-direction: column; align-items: flex-end;}
+            .project-tag { margin-bottom: 0;}
+        }
+
+        /* Connection Section */
+        #connect { background-color: var(--white); padding: 6rem 1.5rem; border-top: 1px solid var(--border-light); }
 
         /* Footer */
         .footer {
-            background-color: var(--platinum);
-            color: var(--text-dark);
-            border-top: 1px solid #d1d3d9;
-            padding: 3rem 1.5rem;
+            background-color: var(--bg-light); color: var(--text-muted);
+            border-top: 1px solid var(--border-light); padding: 4rem 1.5rem;
         }
     </style>
 </head>
 <body>
     <!-- Header/Hero Section -->
-    <header class="hero is-branded is-bold">
+    <header class="hero is-branded">
         <div class="hero-body">
             <div class="container has-text-centered">
                 <h1 class="title">Corey Burns</h1>
-                <h2 class="subtitle mt-3">
-                    Solving modern business problems through process engineering and tactical technology.
+                <h2 class="subtitle">
+                    Engineering seamless workflows and frictionless tools.
                 </h2>
             </div>
         </div>
     </header>
 
-    <!-- About & Philosophy Section -->
+    <!-- About Section -->
     <main>
-    <section id="about" class="section">
-        <div class="container">
-            <article class="box">
-                <div class="columns is-vcentered">
-                    <div class="column is-one-third has-text-centered pr-5">
-                        <img src="Assets/Linkedin Headshot.png" alt="Corey Burns" class="headshot">
-                        <h2 class="title is-3 has-text-dark mb-1">Corey Burns</h2>
-                        <h3 class="subtitle is-6 has-text-grey mt-0" style="text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Business Innovator</h3>
-                    </div>
-                    <div class="column">
-                        <h3 class="title is-4 has-text-international-klein-blue mb-4">Philosophy: Making Work Painless</h3>
-                        <p class="is-size-5 has-text-dark mb-4" style="font-weight: 500;">
-                            Software should adapt to how people work, not the other way around. 
-                        </p>
-                        <p class="is-size-6 has-text-grey-dark mb-4" style="line-height: 1.7;">
-                            By deeply understanding business workflows, I use process engineering and the tactical application of technology to eliminate friction. My goal isn't just to build apps; it's to solve the root problems that mortgage and tech professionals face daily. When friction is removed, work feels effortless, and teams can focus on their actual impact.
-                        </p>
-                        <p class="is-size-6 has-text-grey-dark" style="line-height: 1.7;">
-                            Below is a portfolio of tools engineered to solve specific, real-world bottlenecks. Each project represents a process that was evaluated, optimized, and automated.
-                        </p>
-                    </div>
+    <section id="about">
+        <div class="container about-container">
+            <div class="columns is-vcentered">
+                <div class="column is-4 has-text-centered pr-5">
+                    <img src="Assets/Linkedin Headshot.png" alt="Corey Burns" class="headshot">
+                    <h2 class="title is-3 has-text-dark mb-1">Corey Burns</h2>
                 </div>
-            </article>
+                <div class="column is-8">
+                    <p class="about-text">
+                        Software should adapt to how people work, not the other way around. By deeply understanding business workflows, I engineer processes and tactically apply technology to eliminate operational friction.
+                    </p>
+                    <p class="about-text">
+                        The goal isn't just to build applications; it's to solve the root bottlenecks that professionals face daily. When friction is removed, work feels effortless, allowing teams to focus entirely on their impact.
+                    </p>
+                    <p class="about-text">
+                        The projects below represent real-world workflows that were evaluated, optimized, and automated to give users back their time.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
     
     <!-- Projects Section -->
-    <section id="projects" class="section">
+    <section id="projects">
         <div class="container">
-            <h2 class="title is-2 section-heading has-text-centered">The Toolbox & Portfolio</h2>
+            <h2 class="section-heading">The Portfolio</h2>
             <div id="project-gallery">
                 <!-- Injected via JS -->
             </div>
@@ -276,18 +240,18 @@
     </section>
 
     <!-- Connection Section -->
-    <section id="connect" class="section section-alt-bg">
+    <section id="connect">
         <div class="container has-text-centered">
-             <h2 class="title is-2 section-heading">Let's Connect</h2>
-             <p class="subtitle is-5 has-text-grey-dark mb-6" style="max-width: 800px; margin: 0 auto; line-height: 1.6;">
-                I am constantly exploring new ways to improve business workflows and remove operational friction. Connect with me on LinkedIn to follow my latest projects, or check out my open-source work on GitHub.
+             <h2 class="section-heading" style="margin-bottom: 1.5rem;">Let's Connect</h2>
+             <p class="is-size-5 has-text-grey mb-6" style="max-width: 700px; margin: 0 auto; line-height: 1.6;">
+                I am constantly exploring new ways to improve business workflows. Connect with me on LinkedIn to follow my latest projects, or check out my open-source work on GitHub.
              </p>
-             <div class="buttons is-centered mt-5">
-                <a href="https://www.linkedin.com/in/coreytburns/" target="_blank" class="button is-primary-action is-large">
+             <div class="btn-group" style="justify-content: center; margin-top: 3rem;">
+                <a href="https://www.linkedin.com/in/coreytburns/" target="_blank" class="btn btn-primary">
                     <span class="icon"><i class="fab fa-linkedin"></i></span>
                     <span>Connect on LinkedIn</span>
                 </a>
-                <a href="https://github.com/Spuds0588" target="_blank" class="button is-secondary-action is-large">
+                <a href="https://github.com/Spuds0588" target="_blank" class="btn btn-secondary">
                     <span class="icon"><i class="fab fa-github"></i></span>
                     <span>View GitHub Profile</span>
                 </a>
@@ -300,7 +264,6 @@
     <footer class="footer">
         <div class="content has-text-centered">
             <p><strong>Burns Development</strong> &copy; <span id="year"></span>. All rights reserved.</p>
-            <p>Engineered to make work painless.</p>
         </div>
     </footer>
 
@@ -316,9 +279,7 @@
                     githubUrl: 'https://github.com/Spuds0588/MailLayer',
                     downloadUrl: 'https://github.com/Spuds0588/MailLayer',
                     iconUrl: 'Assets/MailLayer.png',
-                    problem: 'Professionals waste countless hours context-switching between web applications (like CRMs) and clunky desktop email clients just to send routine messages.',
-                    solution: 'A free, open-source browser extension that intercepts mailto: links and injects a native, CSP-compliant email composer directly into the current webpage.',
-                    impact: 'Eliminates workflow friction and context-switching, enabling direct API sending via Gmail and Outlook without ever leaving the active workspace.',
+                    description: 'Professionals often lose valuable time context-switching between web applications and clunky desktop email clients just to send routine messages. MailLayer intercepts mailto: links, injecting a native, CSP-compliant email composer directly into the current webpage. By enabling direct API sending via Gmail and Outlook, it entirely eliminates context-switching and keeps you focused on your active workspace.',
                     downloadButtonText: 'View on GitHub'
                 },
                 {
@@ -327,9 +288,7 @@
                     githubUrl: 'https://github.com/Spuds0588/open-fdd',
                     downloadUrl: 'https://github.com/Spuds0588/open-fdd',
                     iconUrl: 'Assets/OpenFDD.png', 
-                    problem: 'Static PDFs trap critical business data, forcing companies to rely on fragile OCR technology or manual data entry to extract information.',
-                    solution: 'An open specification replacing visual-first PDFs with interactive, cryptographically verified JSON-LD data containers bound inside a zero-JS HTML layer.',
-                    impact: 'Enables seamless, secure system-to-system data exchange while maintaining perfect human readability and tamper-evident security.',
+                    description: 'Static PDFs trap critical business data, forcing organizations to rely on fragile OCR technology or manual data entry. OpenFDD provides an open specification that replaces visual-first PDFs with interactive, cryptographically verified JSON-LD data containers bound inside a zero-JS HTML layer. This guarantees seamless, secure system-to-system data exchange while maintaining perfect human readability and tamper-evident security.',
                     downloadButtonText: 'View on GitHub'
                 },
                 {
@@ -338,9 +297,7 @@
                     githubUrl: 'https://github.com/Spuds0588/Sparrow-Offline-CRM',
                     downloadUrl: 'https://spuds0588.github.io/Sparrow-Offline-CRM/',
                     iconUrl: 'Assets/Sparrow-Offline-CRM.png',
-                    problem: 'Traditional cloud CRMs are expensive, complex to configure, and require individuals to surrender control of their proprietary contact data to third parties.',
-                    solution: 'A private, portable, "offline-first" CRM application engineered to run entirely within a single, local HTML file using modern browser File System APIs.',
-                    impact: 'Provides robust relationship management capabilities with zero infrastructure, zero cost, and absolute 100% data ownership.',
+                    description: 'Traditional cloud CRMs are often overly complex and require individuals to surrender control of their proprietary contact data to third parties. Sparrow is a private, portable, "offline-first" CRM engineered to run entirely within a single, local HTML file using modern browser File System APIs. It delivers robust relationship management with zero infrastructure, zero cost, and absolute data ownership.',
                     downloadButtonText: 'Try Application'
                 },
                 {
@@ -349,9 +306,7 @@
                     githubUrl: 'https://github.com/Spuds0588/CSV-Quickview',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/csv-quickview/gcoenalehcoefjbfjgjpkhdfjkjpedai',
                     iconUrl: 'Assets/CSV-Quickview.png',
-                    problem: 'Opening simple CSV files triggers slow, heavy spreadsheet applications that disrupt focus just for a quick data check.',
-                    solution: 'A high-performance Chrome extension that intercepts local .csv files and renders them instantly in the browser.',
-                    impact: 'Turns the browser into a blazingly fast data viewer with sticky headers and dark mode, saving valuable time on routine data validation.',
+                    description: 'Opening a simple CSV file shouldn\'t trigger a slow, heavy spreadsheet application that disrupts your focus just for a quick data check. This high-performance extension intercepts local .csv files and instantly renders them in the browser. Complete with sticky headers and dark mode, it turns your browser into a blazingly fast data viewer to accelerate routine data validation.',
                     downloadButtonText: 'Add to Chrome'
                 },
                 {
@@ -360,9 +315,7 @@
                     githubUrl: 'https://github.com/Spuds0588/Instant-Teams-Meeting-Link-Extension',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/instant-teams-meeting-lin/mjomgjmgdffokaknimffplhfjhiialep',
                     iconUrl: 'Assets/20250610 Instant Teams Meeting Link - Icon 128_20250615_084219_0000.png', 
-                    problem: 'Creating impromptu Teams meetings requires navigating away from the current task, clicking through multiple menus, and copying links manually.',
-                    solution: 'A lightweight extension that securely generates and inserts a Microsoft Teams meeting link via a single right-click context menu.',
-                    impact: 'Saves clicks and context shifts by integrating meeting generation seamlessly into any text field on the web.',
+                    description: 'Creating impromptu Teams meetings typically involves navigating away from your current task, clicking through multiple menus, and manually copying links. This lightweight extension securely generates and inserts a Microsoft Teams meeting link via a single right-click context menu. By integrating meeting generation seamlessly into any text field, it saves clicks and maintains your momentum.',
                     downloadButtonText: 'Add to Chrome'
                 },
                 {
@@ -371,9 +324,7 @@
                     githubUrl: 'https://github.com/Spuds0588/Arive-Cookie-and-Cache-Cleaner',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/arive-cookie-and-cache-cl/fdfbeepemfieoeeahcimjmeipibckcai',
                     iconUrl: 'Assets/arive_cookie_cleaner.png',
-                    problem: 'Mortgage originators frequently encounter stale cache issues on complex platforms, requiring cumbersome browser setting navigation to resolve.',
-                    solution: 'A targeted extension providing a single-click button to clear relevant cookies and cache specifically for the working environment.',
-                    impact: 'Empowers non-technical users to self-resolve login and state issues instantly, significantly reducing IT support requests.',
+                    description: 'The Arive LOS is a powerful core system for mortgage professionals, but like any complex platform, it can occasionally encounter stale cache issues that halt productivity. This targeted extension provides a single-click button for originators to clear relevant cookies specifically for the Arive environment. It empowers non-technical users to self-resolve login and state issues instantly, keeping the loan file moving without waiting on IT support.',
                     downloadButtonText: 'Add to Chrome'
                 },
                 {
@@ -382,9 +333,7 @@
                     githubUrl: 'https://github.com/Spuds0588/Universal-Arive-Merge-Tags-Inserter',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/universal-arive-merge-tag/olgokogbjimejmfniepamnmlpmklfbli',
                     iconUrl: 'Assets/Universal Arive Merge Tags Inserter - 128px Icon_20250615_084405_0000.png',
-                    problem: 'Memorizing and typing specific merge tags for document generation systems is slow, tedious, and highly error-prone.',
-                    solution: 'An insertion tool that provides quick access to compatible tags using a simple trigger or right-click context menu.',
-                    impact: 'Dramatically accelerates template creation workflows and eliminates data-entry errors.',
+                    description: 'Building document templates within the Arive LOS often requires typing specific, exact merge tags—a process that is slow, tedious, and highly error-prone. This insertion tool provides quick access to all compatible Arive tags using a simple {{ trigger or right-click menu. It dramatically accelerates template creation workflows and eliminates data-entry errors when preparing critical loan documents.',
                     downloadButtonText: 'Add to Chrome'
                 },
                 {
@@ -393,9 +342,16 @@
                     githubUrl: 'https://github.com/Spuds0588/Arive-Dynamic-Document-Generator',
                     downloadUrl: 'https://spuds0588.github.io/Arive-Dynamic-Document-Generator/',
                     iconUrl: 'Assets/Arive-Dynamic-Document-Generator.png',
-                    problem: 'Creating personalized, dynamic HTML documents requires coding knowledge, creating a major bottleneck for business users.',
-                    solution: 'A browser-based SPA wizard that allows anyone to visually design, style, and generate self-contained HTML templates.',
-                    impact: 'Democratizes document creation, allowing professionals to build custom, dynamic assets without waiting on a developer.',
+                    description: 'While the Arive LOS handles standard forms perfectly, originators frequently need to create highly personalized, dynamic HTML documents to fill communication gaps and get a loan across the finish line. This browser-based SPA wizard empowers business users to visually design, style, and generate self-contained HTML templates without any coding knowledge, democratizing custom asset creation.',
+                    downloadButtonText: 'Try Application'
+                },
+                {
+                    title: 'Arive Task Bookmarklet Generator',
+                    tag: 'Process Optimization',
+                    githubUrl: 'https://github.com/Spuds0588/ReferenceMaterials',
+                    downloadUrl: 'https://spuds0588.github.io/ReferenceMaterials/Arive-Task-Bookmarklet-Generator(V4.1).html',
+                    iconUrl: 'Assets/Arive-Tasks-Bookmarklet-Logo-raw.png',
+                    description: 'Originators frequently perform repetitive, multi-click actions within the Arive LOS to manage their pipeline. This utility allows users to visually construct custom JavaScript bookmarklets that automate interactions directly within the Arive UI. By deploying low-code automation straight to the browser\'s bookmark bar, professionals can execute complex task sequences in a single click.',
                     downloadButtonText: 'Try Application'
                 }
             ];
@@ -409,7 +365,7 @@
 
             gallery.innerHTML = ''; 
             if(projects.length === 0) {
-                gallery.innerHTML = `<div style="grid-column: 1 / -1;"><p class="has-text-centered">No projects to display yet.</p></div>`;
+                gallery.innerHTML = `<p class="has-text-centered">No projects to display yet.</p>`;
                 return;
             }
 
@@ -419,26 +375,21 @@
                 article.innerHTML = `
                     <div class="card-sidebar">
                         <img src="${project.iconUrl}" alt="${project.title} icon">
-                        <h3 class="title">${project.title}</h3>
-                        <span class="tag">${project.tag}</span>
+                        <div class="tags">
+                            <span class="project-tag">${project.tag}</span>
+                        </div>
                     </div>
                     <div class="card-main">
-                        <div class="problem-solution">
-                            <h4 class="label-heading">The Problem</h4>
-                            <p class="content-text">${project.problem}</p>
-                            
-                            <h4 class="label-heading">The Solution</h4>
-                            <p class="content-text">${project.solution}</p>
-                            
-                            <h4 class="label-heading">The Impact</h4>
-                            <p class="content-text impact-text">${project.impact}</p>
+                        <h3 class="project-title">${project.title}</h3>
+                        <div class="project-desc">
+                            <p>${project.description}</p>
                         </div>
-                        <div class="card-actions">
-                            <a href="${project.githubUrl}" target="_blank" class="button is-secondary-action">
+                        <div class="btn-group">
+                            <a href="${project.githubUrl}" target="_blank" class="btn btn-secondary">
                                 <span class="icon"><i class="fab fa-github"></i></span>
                                 <span>Source Code</span>
                             </a>
-                            <a href="${project.downloadUrl}" target="_blank" class="button is-primary-action">
+                            <a href="${project.downloadUrl}" target="_blank" class="btn btn-primary">
                                 <span class="icon"><i class="fas fa-external-link-alt"></i></span>
                                 <span>${project.downloadButtonText}</span>
                             </a>
