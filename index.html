@@ -45,6 +45,10 @@
             --text-main: #F3F4F6; /* Off-white */
             --text-muted: #9CA3AF; /* Light gray */
             --border-light: rgba(255,255,255,0.08);
+            
+            --surface-color: var(--bg-card);
+            --radius: 24px;
+            --border-color: var(--border-light);
         }
 
         html { scroll-behavior: smooth; }
@@ -219,14 +223,23 @@
              <p class="is-size-5 mb-6" style="max-width: 700px; margin: 0 auto; line-height: 1.6; color: var(--text-muted);">
                 I am constantly exploring new ways to improve business workflows. Connect with me on LinkedIn to follow my latest projects, or check out my open-source work on GitHub.
              </p>
+             <div class="engagement-model" style="margin-bottom: 2.5rem; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; background: var(--surface-color); padding: 2rem; border-radius: var(--radius); border: 1px solid var(--border-color);">
+                 <h3 style="margin-top: 0;">Strategic Workflow Architecture</h3>
+                 <p>Beyond open-source development, I am currently leading Product Education & Enablement at ARIVE. If your organization is looking to eliminate operational friction and map complex mortgage processes into scalable, automated workflows within the ARIVE ecosystem, let's connect.</p>
+                 <ul style="padding-left: 1.5rem; margin-bottom: 0;">
+                     <li><strong>Workflow Audits:</strong> Identifying manual bottlenecks in your origination lifecycle.</li>
+                     <li><strong>System Architecture:</strong> Deploying custom, no-code/low-code automation layers.</li>
+                     <li><strong>Process Implementation:</strong> Translating business goals into executable LOS configurations.</li>
+                 </ul>
+             </div>
              <div class="btn-group" style="justify-content: center; margin-top: 3rem;">
                 <a href="https://www.linkedin.com/in/coreytburns/" target="_blank" class="btn btn-primary">
                     <span class="icon"><i class="fab fa-linkedin"></i></span>
                     <span>Connect on LinkedIn</span>
                 </a>
-                <a href="https://github.com/Spuds0588" target="_blank" class="btn btn-secondary">
-                    <span class="icon"><i class="fab fa-github"></i></span>
-                    <span>View GitHub Profile</span>
+                <a href="mailto:coreyb@arive.com" target="_blank" class="btn btn-secondary">
+                    <span class="icon"><i class="fas fa-envelope"></i></span>
+                    <span>Inquire About Architecture Consulting</span>
                 </a>
              </div>
         </div>
@@ -253,7 +266,7 @@
                     githubUrl: 'https://github.com/Spuds0588/MailLayer',
                     downloadUrl: 'https://github.com/Spuds0588/MailLayer',
                     iconUrl: 'Assets/MailLayer.png',
-                    description: "Professionals often lose valuable time context-switching between web applications and clunky desktop email clients just to send routine messages. MailLayer intercepts mailto: links, injecting a native, CSP-compliant email composer directly into the current webpage. By enabling direct API sending via Gmail and Outlook, it entirely eliminates context-switching and keeps you focused on your active workspace.",
+                    description: "Professionals often lose valuable time context-switching between web applications and clunky desktop email clients just to send routine messages. MailLayer intercepts mailto: links, injecting a native, CSP-compliant email composer directly into the current webpage. By enabling direct API sending via Gmail and Outlook, it entirely eliminates context-switching and keeps you focused on your active workspace.<br><br><strong>Business Value:</strong> Recoups an estimated 4 hours per week per user by eliminating application context-switching.",
                     downloadButtonText: 'View on GitHub'
                 },
                 {
@@ -262,7 +275,7 @@
                     githubUrl: 'https://github.com/Spuds0588/open-fdd',
                     downloadUrl: 'https://github.com/Spuds0588/open-fdd',
                     iconUrl: 'Assets/OpenFDD.png', 
-                    description: "Static PDFs trap critical business data, forcing organizations to rely on fragile OCR technology or manual data entry. OpenFDD provides an open specification that replaces visual-first PDFs with interactive, cryptographically verified JSON-LD data containers bound inside a zero-JS HTML layer. This guarantees seamless, secure system-to-system data exchange while maintaining perfect human readability and tamper-evident security.",
+                    description: "Static PDFs trap critical business data, forcing organizations to rely on fragile OCR technology or manual data entry. OpenFDD provides an open specification that replaces visual-first PDFs with interactive, cryptographically verified JSON-LD data containers bound inside a zero-JS HTML layer. This guarantees seamless, secure system-to-system data exchange while maintaining perfect human readability and tamper-evident security.<br><br><strong>Business Value:</strong> Future-proofs data compliance and enables zero-friction vendor data exchange.",
                     downloadButtonText: 'View on GitHub'
                 },
                 {
@@ -293,21 +306,21 @@
                     downloadButtonText: 'Add to Chrome'
                 },
                 {
-                    title: 'Arive Cookie & Cache Cleaner',
+                    title: 'Enterprise LOS Environment Cleaner',
                     tag: 'Support Utility',
                     githubUrl: 'https://github.com/Spuds0588/Arive-Cookie-and-Cache-Cleaner',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/arive-cookie-and-cache-cl/fdfbeepemfieoeeahcimjmeipibckcai',
                     iconUrl: 'Assets/arive_cookie_cleaner.png',
-                    description: "The Arive LOS is a powerful core system for mortgage professionals, but like any complex platform, it can occasionally encounter stale cache issues that halt productivity. This targeted extension provides a single-click button for originators to clear relevant cookies specifically for the Arive environment. It empowers non-technical users to self-resolve login and state issues instantly, keeping the loan file moving without waiting on IT support.",
+                    description: "Modern enterprise origination platforms are powerful core systems, but like any complex platform, they can occasionally encounter stale cache issues that halt productivity. This targeted extension provides a single-click button for originators to clear relevant cookies specifically for the LOS environment. It empowers non-technical users to self-resolve login and state issues instantly, keeping the loan file moving without waiting on IT support.<br><br><strong>Business Value:</strong> Drastically reduces IT support tickets related to cached state errors in complex browser apps.",
                     downloadButtonText: 'Add to Chrome'
                 },
                 {
-                    title: 'Universal Arive Merge Tags',
+                    title: 'Universal LOS Merge Tag Inserter',
                     tag: 'Process Optimization',
                     githubUrl: 'https://github.com/Spuds0588/Universal-Arive-Merge-Tags-Inserter',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/universal-arive-merge-tag/olgokogbjimejmfniepamnmlpmklfbli',
                     iconUrl: 'Assets/Universal Arive Merge Tags Inserter - 128px Icon_20250615_084405_0000.png',
-                    description: "Originators often prefer to build HTML email templates outside of the Arive LOS in a dedicated email builder, but lose access to Arive's specific data tags. This insertion tool provides native-like access to the entire Arive merge tag catalog via a simple {{ trigger or right-click menu, creating a seamless copy-paste-save workflow for importing external templates back into the LOS with perfect data mapping.",
+                    description: "Originators often prefer to build HTML email templates outside of cloud-based LOS systems in a dedicated email builder, but lose access to specific data tags. This insertion tool provides native-like access to the entire LOS merge tag catalog via a simple {{ trigger or right-click menu, creating a seamless copy-paste-save workflow for importing external templates back into the LOS with perfect data mapping.<br><br><strong>Business Value:</strong> Eliminates manual data-entry errors and accelerates external marketing deployments.",
                     downloadButtonText: 'Add to Chrome'
                 },
                 {
@@ -316,16 +329,16 @@
                     githubUrl: 'https://github.com/Spuds0588/Arive-Dynamic-Document-Generator',
                     downloadUrl: 'https://spuds0588.github.io/Arive-Dynamic-Document-Generator/',
                     iconUrl: 'Assets/Arive-Dynamic-Document-Generator.png',
-                    description: "The Arive LOS lacks an easy way to generate, populate, and send highly customized external documents using existing automation rules. This browser-based SPA empowers non-technical originators to visually design self-contained HTML templates. Once hosted, you simply link the document in your Arive email templates with appended URL parameters. The end borrower receives a secure link to a dynamic, PDF-downloadable document filled instantly with their relevant loan data.",
+                    description: "Enterprise loan origination systems often lack an easy way to generate, populate, and send highly customized external documents using existing automation rules. This browser-based SPA empowers non-technical originators to visually design self-contained HTML templates. Once hosted, you simply link the document in your LOS email templates with appended URL parameters. The end borrower receives a secure link to a dynamic, PDF-downloadable document filled instantly with their relevant loan data.<br><br><strong>Business Value:</strong> Standardizes compliance documentation and accelerates processing workflows.",
                     downloadButtonText: 'Try Application'
                 },
                 {
-                    title: 'Arive Task Bookmarklet Generator',
+                    title: 'Task Automation Bookmarklet Generator',
                     tag: 'Process Optimization',
                     githubUrl: 'https://github.com/Spuds0588/ReferenceMaterials',
                     downloadUrl: 'https://spuds0588.github.io/ReferenceMaterials/Arive-Task-Bookmarklet-Generator(V4.1).html',
                     iconUrl: 'Assets/Arive-Tasks-Bookmarklet-Logo-raw.png',
-                    description: "Assigning multiple tasks individually in the Arive LOS is repetitive, and native user-level automation requires a costly Pro-level account. This utility allows originators to generate a custom JavaScript bookmarklet that assigns multiple tasks to themselves all at once. By deploying this automation directly to the browser's bookmark bar, users can bypass manual clicks and upgrade their task workflow without needing a premium account.",
+                    description: "Assigning multiple tasks individually in the Arive LOS is repetitive, and native user-level automation requires a costly Pro-level account. This utility allows originators to generate a custom JavaScript bookmarklet that assigns multiple tasks to themselves all at once. By deploying this automation directly to the browser's bookmark bar, users can bypass manual clicks and upgrade their task workflow without needing a premium account.<br><br><strong>Business Value:</strong> Saves operations teams hundreds of clicks daily on repetitive task creation.",
                     downloadButtonText: 'Try Application'
                 }
             ];
