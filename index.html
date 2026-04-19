@@ -70,6 +70,9 @@
             font-size: 2.5rem; margin-bottom: 3rem; 
             font-weight: 700; text-align: center;
         }
+        .section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main); }
+        .section-subtitle { font-size: 1.1rem; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 3rem; }
+
         
         /* About Section */
         #about { padding: 8rem 1.5rem 4rem 1.5rem; border-bottom: 1px solid var(--border-light); }
@@ -190,17 +193,14 @@
                     <p class="about-text">
                         The goal isn't just to build applications; it's to solve the root bottlenecks that professionals face daily. When friction is removed, work feels effortless, allowing teams to focus entirely on their impact.
                     </p>
-                    <p class="about-text">
-                        The projects below represent real-world workflows that were evaluated, optimized, and automated to give users back their time.
-                    </p>
                     <div class="btn-group" style="margin-top: 2.5rem;">
                         <a href="https://www.linkedin.com/in/coreytburns/" target="_blank" class="btn btn-primary">
                             <span class="icon"><i class="fab fa-linkedin"></i></span>
                             <span>Connect on LinkedIn</span>
                         </a>
-                        <a href="https://github.com/Spuds0588" target="_blank" class="btn btn-secondary">
-                            <span class="icon"><i class="fab fa-github"></i></span>
-                            <span>View GitHub Profile</span>
+                        <a href="mailto:coreyb@arive.com" target="_blank" class="btn btn-secondary">
+                            <span class="icon"><i class="fas fa-envelope"></i></span>
+                            <span>Inquire About Architecture Consulting</span>
                         </a>
                     </div>
                 </div>
@@ -208,31 +208,31 @@
         </div>
     </section>
     
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <div id="project-gallery">
-                <!-- Injected via JS -->
+    <section id="methodology" class="section" style="padding: 8rem 1.5rem; border-bottom: 1px solid var(--border-light);">
+        <div class="container has-text-centered">
+            <div class="section-header">
+                <h2 class="section-title">Systems Methodology</h2>
+                <p class="section-subtitle">How I approach enterprise friction</p>
+            </div>
+            <div class="insights-content" style="text-align: center; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                <p class="is-size-5 mb-5">I operate on a simple premise: <strong>Software should adapt to how people work, not the other way around.</strong></p>
+                <p class="is-size-6" style="color: var(--text-muted);">True operational scale is not achieved by hiring more headcount to manage manual software gaps. It is achieved by identifying systemic bottlenecks, defining the ideal data flow, and building iterative, embedded automation layers that allow originators and operations teams to execute flawlessly without leaving their primary workspace.</p>
             </div>
         </div>
     </section>
 
-    <!-- Connection Section -->
-    <section id="connect">
+    <section id="connect" style="background-color: var(--bg-card); padding: 8rem 1.5rem;">
         <div class="container has-text-centered">
-             <p class="is-size-5 mb-6" style="max-width: 700px; margin: 0 auto; line-height: 1.6; color: var(--text-muted);">
-                I am constantly exploring new ways to improve business workflows. Connect with me on LinkedIn to follow my latest projects, or check out my open-source work on GitHub.
-             </p>
-             <div class="engagement-model" style="margin-bottom: 2.5rem; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; background: var(--surface-color); padding: 2rem; border-radius: var(--radius); border: 1px solid var(--border-color);">
-                 <h3 style="margin-top: 0;">Strategic Workflow Architecture</h3>
-                 <p>Beyond open-source development, I am currently leading Product Education & Enablement at ARIVE. If your organization is looking to eliminate operational friction and map complex mortgage processes into scalable, automated workflows within the ARIVE ecosystem, let's connect.</p>
-                 <ul style="padding-left: 1.5rem; margin-bottom: 0;">
+             <div class="engagement-model" style="margin-bottom: 3rem; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; background: var(--surface-color); padding: 3rem; border-radius: var(--radius); border: 1px solid var(--border-color);">
+                 <h3 style="margin-top: 0; color: var(--accent-blue); font-size: 1.75rem; margin-bottom: 1.5rem;">Strategic Workflow Architecture</h3>
+                 <p class="mb-4">I am currently leading Product Education & Enablement at ARIVE. If your organization is looking to eliminate operational friction and map complex mortgage processes into scalable, automated workflows within the ARIVE ecosystem, let's connect.</p>
+                 <ul style="padding-left: 1.5rem; margin-bottom: 0; line-height: 1.8; color: var(--text-muted);">
                      <li><strong>Workflow Audits:</strong> Identifying manual bottlenecks in your origination lifecycle.</li>
-                     <li><strong>System Architecture:</strong> Deploying custom, no-code/low-code automation layers.</li>
+                     <li><strong>System Architecture:</strong> Designing embedded, zero-friction data flows.</li>
                      <li><strong>Process Implementation:</strong> Translating business goals into executable LOS configurations.</li>
                  </ul>
              </div>
-             <div class="btn-group" style="justify-content: center; margin-top: 3rem;">
+             <div class="btn-group" style="justify-content: center;">
                 <a href="https://www.linkedin.com/in/coreytburns/" target="_blank" class="btn btn-primary">
                     <span class="icon"><i class="fab fa-linkedin"></i></span>
                     <span>Connect on LinkedIn</span>
@@ -256,136 +256,6 @@
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
-
-        document.addEventListener('DOMContentLoaded', function () {
-            // Re-constructing the projects array, ensuring all quotes are properly escaped to prevent SyntaxErrors.
-            const projects = [
-                {
-                    title: 'MailLayer',
-                    tag: 'Workflow Automation',
-                    githubUrl: 'https://github.com/Spuds0588/MailLayer',
-                    downloadUrl: 'https://github.com/Spuds0588/MailLayer',
-                    iconUrl: 'Assets/MailLayer.png',
-                    description: "Professionals often lose valuable time context-switching between web applications and clunky desktop email clients just to send routine messages. MailLayer intercepts mailto: links, injecting a native, CSP-compliant email composer directly into the current webpage. By enabling direct API sending via Gmail and Outlook, it entirely eliminates context-switching and keeps you focused on your active workspace.<br><br><strong>Business Value:</strong> Recoups an estimated 4 hours per week per user by eliminating application context-switching.",
-                    downloadButtonText: 'View on GitHub'
-                },
-                {
-                    title: 'OpenFDD',
-                    tag: 'Identity & Data Security',
-                    githubUrl: 'https://github.com/Spuds0588/open-fdd',
-                    downloadUrl: 'https://github.com/Spuds0588/open-fdd',
-                    iconUrl: 'Assets/OpenFDD.png', 
-                    description: "Static PDFs trap critical business data, forcing organizations to rely on fragile OCR technology or manual data entry. OpenFDD provides an open specification that replaces visual-first PDFs with interactive, cryptographically verified JSON-LD data containers bound inside a zero-JS HTML layer. This guarantees seamless, secure system-to-system data exchange while maintaining perfect human readability and tamper-evident security.<br><br><strong>Business Value:</strong> Future-proofs data compliance and enables zero-friction vendor data exchange.",
-                    downloadButtonText: 'View on GitHub'
-                },
-                {
-                    title: 'Sparrow Offline CRM',
-                    tag: 'Data Sovereignty',
-                    githubUrl: 'https://github.com/Spuds0588/Sparrow-Offline-CRM',
-                    downloadUrl: 'https://spuds0588.github.io/Sparrow-Offline-CRM/',
-                    iconUrl: 'Assets/Sparrow-Offline-CRM.png',
-                    description: "Traditional cloud CRMs are often overly complex and require individuals to surrender control of their proprietary contact data to third parties. Sparrow is a private, portable, \"offline-first\" CRM engineered to run entirely within a single, local HTML file using modern browser File System APIs. It delivers robust relationship management with zero infrastructure, zero cost, and absolute data ownership.",
-                    downloadButtonText: 'Try Application'
-                },
-                {
-                    title: 'CSV QuickView',
-                    tag: 'Data Analysis',
-                    githubUrl: 'https://github.com/Spuds0588/CSV-Quickview',
-                    downloadUrl: 'https://chrome.google.com/webstore/detail/csv-quickview/gcoenalehcoefjbfjgjpkhdfjkjpedai',
-                    iconUrl: 'Assets/CSV-Quickview.png',
-                    description: "Opening a simple CSV file shouldn't trigger a slow, heavy spreadsheet application that disrupts your focus just for a quick data check. This high-performance extension intercepts local .csv files and instantly renders them in the browser. Complete with sticky headers and dark mode, it turns your browser into a blazingly fast data viewer to accelerate routine data validation.",
-                    downloadButtonText: 'Add to Chrome'
-                },
-                {
-                    title: 'Instant Teams Meeting Link',
-                    tag: 'Communication',
-                    githubUrl: 'https://github.com/Spuds0588/Instant-Teams-Meeting-Link-Extension',
-                    downloadUrl: 'https://chrome.google.com/webstore/detail/instant-teams-meeting-lin/mjomgjmgdffokaknimffplhfjhiialep',
-                    iconUrl: 'Assets/20250610 Instant Teams Meeting Link - Icon 128_20250615_084219_0000.png', 
-                    description: "Creating impromptu Teams meetings typically involves navigating away from your current task, clicking through multiple menus, and manually copying links. This lightweight extension securely generates and inserts a Microsoft Teams meeting link via a single right-click context menu. By integrating meeting generation seamlessly into any text field, it saves clicks and maintains your momentum.",
-                    downloadButtonText: 'Add to Chrome'
-                },
-                {
-                    title: 'Enterprise LOS Environment Cleaner',
-                    tag: 'Support Utility',
-                    githubUrl: 'https://github.com/Spuds0588/Arive-Cookie-and-Cache-Cleaner',
-                    downloadUrl: 'https://chrome.google.com/webstore/detail/arive-cookie-and-cache-cl/fdfbeepemfieoeeahcimjmeipibckcai',
-                    iconUrl: 'Assets/arive_cookie_cleaner.png',
-                    description: "Modern enterprise origination platforms are powerful core systems, but like any complex platform, they can occasionally encounter stale cache issues that halt productivity. This targeted extension provides a single-click button for originators to clear relevant cookies specifically for the LOS environment. It empowers non-technical users to self-resolve login and state issues instantly, keeping the loan file moving without waiting on IT support.<br><br><strong>Business Value:</strong> Drastically reduces IT support tickets related to cached state errors in complex browser apps.",
-                    downloadButtonText: 'Add to Chrome'
-                },
-                {
-                    title: 'Universal LOS Merge Tag Inserter',
-                    tag: 'Process Optimization',
-                    githubUrl: 'https://github.com/Spuds0588/Universal-Arive-Merge-Tags-Inserter',
-                    downloadUrl: 'https://chrome.google.com/webstore/detail/universal-arive-merge-tag/olgokogbjimejmfniepamnmlpmklfbli',
-                    iconUrl: 'Assets/Universal Arive Merge Tags Inserter - 128px Icon_20250615_084405_0000.png',
-                    description: "Originators often prefer to build HTML email templates outside of cloud-based LOS systems in a dedicated email builder, but lose access to specific data tags. This insertion tool provides native-like access to the entire LOS merge tag catalog via a simple {{ trigger or right-click menu, creating a seamless copy-paste-save workflow for importing external templates back into the LOS with perfect data mapping.<br><br><strong>Business Value:</strong> Eliminates manual data-entry errors and accelerates external marketing deployments.",
-                    downloadButtonText: 'Add to Chrome'
-                },
-                {
-                    title: 'Dynamic Document Generator',
-                    tag: 'No-Code Tooling',
-                    githubUrl: 'https://github.com/Spuds0588/Arive-Dynamic-Document-Generator',
-                    downloadUrl: 'https://spuds0588.github.io/Arive-Dynamic-Document-Generator/',
-                    iconUrl: 'Assets/Arive-Dynamic-Document-Generator.png',
-                    description: "Enterprise loan origination systems often lack an easy way to generate, populate, and send highly customized external documents using existing automation rules. This browser-based SPA empowers non-technical originators to visually design self-contained HTML templates. Once hosted, you simply link the document in your LOS email templates with appended URL parameters. The end borrower receives a secure link to a dynamic, PDF-downloadable document filled instantly with their relevant loan data.<br><br><strong>Business Value:</strong> Standardizes compliance documentation and accelerates processing workflows.",
-                    downloadButtonText: 'Try Application'
-                },
-                {
-                    title: 'Task Automation Bookmarklet Generator',
-                    tag: 'Process Optimization',
-                    githubUrl: 'https://github.com/Spuds0588/ReferenceMaterials',
-                    downloadUrl: 'https://spuds0588.github.io/ReferenceMaterials/Arive-Task-Bookmarklet-Generator(V4.1).html',
-                    iconUrl: 'Assets/Arive-Tasks-Bookmarklet-Logo-raw.png',
-                    description: "Assigning multiple tasks individually in the Arive LOS is repetitive, and native user-level automation requires a costly Pro-level account. This utility allows originators to generate a custom JavaScript bookmarklet that assigns multiple tasks to themselves all at once. By deploying this automation directly to the browser's bookmark bar, users can bypass manual clicks and upgrade their task workflow without needing a premium account.<br><br><strong>Business Value:</strong> Saves operations teams hundreds of clicks daily on repetitive task creation.",
-                    downloadButtonText: 'Try Application'
-                }
-            ];
-
-            populateProjects(projects);
-        });
-
-        function populateProjects(projects) {
-            const gallery = document.getElementById('project-gallery');
-            if (!gallery) return;
-
-            gallery.innerHTML = ''; 
-            if(projects.length === 0) {
-                gallery.innerHTML = `<p class="has-text-centered">No projects to display yet.</p>`;
-                return;
-            }
-
-            projects.forEach(project => {
-                const article = document.createElement('article');
-                article.className = 'project-card';
-                article.innerHTML = `
-                    <div class="card-sidebar">
-                        <img src="${project.iconUrl}" alt="${project.title} icon">
-                        <div class="tags">
-                            <span class="project-tag">${project.tag}</span>
-                        </div>
-                    </div>
-                    <div class="card-main">
-                        <h3 class="project-title">${project.title}</h3>
-                        <div class="project-desc">
-                            <p>${project.description}</p>
-                        </div>
-                        <div class="btn-group">
-                            <a href="${project.githubUrl}" target="_blank" class="btn btn-secondary">
-                                <span class="icon"><i class="fab fa-github"></i></span>
-                                <span>Source Code</span>
-                            </a>
-                            <a href="${project.downloadUrl}" target="_blank" class="btn btn-primary">
-                                <span class="icon"><i class="fas fa-external-link-alt"></i></span>
-                                <span>${project.downloadButtonText}</span>
-                            </a>
-                        </div>
-                    </div>
-                `;
-                gallery.appendChild(article);
-            });
-        }
     </script>
 </body>
 </html>
