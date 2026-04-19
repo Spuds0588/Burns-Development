@@ -3,16 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burns Development - Tools & Templates by Corey Burns</title>
+    <title>Corey Burns | Business Innovator & Process Engineer</title>
+    <meta name="description" content="Portfolio of Corey Burns. Solving modern business problems through process engineering and the tactical application of technology to eliminate friction.">
+    
+    <!-- OpenGraph / Social Meta Tags -->
+    <meta property="og:title" content="Corey Burns | Business Innovator & Technologist">
+    <meta property="og:description" content="I make work feel painless by removing friction through process engineering and tactical technology. Explore my tools and frameworks.">
+    <meta property="og:type" content="website">
+    
+    <!-- JSON-LD for AEO/SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Corey Burns",
+      "jobTitle": "Business Innovator & Process Engineer",
+      "url": "https://spuds0588.github.io/Burns-Development/",
+      "sameAs": [
+        "https://www.linkedin.com/in/coreytburns/",
+        "https://github.com/Spuds0588"
+      ],
+      "knowsAbout": ["Process Engineering", "Software Development", "Mortgage Technology", "Business Innovation"]
+    }
+    </script>
+
     <link rel="icon" href="Assets/favicon.jpg" type="image/jpeg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <style>
-        /* 
-         * Burns Development - Custom Blue Brand Theme
-         */
-
+        /* Burns Development - Custom Blue Brand Theme */
         :root {
-            /* Brand Colors */
             --savoy-blue: #5964A6;
             --penn-blue: #0C1B49;
             --platinum: #DFE1E8;
@@ -22,10 +41,7 @@
             --text-dark: var(--penn-blue);
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
+        html { scroll-behavior: smooth; }
         body {
             background-color: var(--platinum);
             color: var(--text-dark);
@@ -46,16 +62,6 @@
             color: var(--white);
             opacity: 0.9;
         }
-        .hero.is-branded .button.is-hero-cta {
-            background-color: transparent;
-            border-color: var(--white);
-            color: var(--white);
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        .hero.is-branded .button.is-hero-cta:hover {
-            background-color: var(--white);
-            color: var(--international-klein-blue);
-        }
         
         /* General Styles & Sections */
         .section-heading {
@@ -64,84 +70,127 @@
             color: var(--text-dark);
             font-weight: 700;
         }
-        .section.section-alt-bg {
-             background-color: var(--white);
-        }
+        .section.section-alt-bg { background-color: var(--white); }
 
-        /* About Section */
+        /* About & Philosophy Section */
         #about .box {
             background-color: var(--white);
             box-shadow: 0 8px 24px rgba(12, 27, 73, 0.08);
             border: 1px solid var(--platinum);
-            max-width: 960px;
+            max-width: 1000px;
             margin: 0 auto;
+            padding: 3.5rem 3rem;
+            border-radius: 12px;
         }
         .headshot {
-            max-width: 150px;
-            height: 150px;
+            max-width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 1rem;
+            border: 4px solid var(--platinum);
         }
         
-        /* --- Projects Section (Grid Layout) --- */
+        /* --- Projects Section (Modern Large Cards) --- */
         #project-gallery {
             display: grid;
-            /* Creates 1-3 columns depending on viewport width */
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .project-card {
-            background-color: var(--penn-blue);
-            color: var(--white);
+            background-color: var(--white);
+            color: var(--text-dark);
             border-radius: 12px;
             display: flex;
-            flex-direction: column;
-            height: 100%;
-            box-shadow: 0 10px 30px rgba(12, 27, 73, 0.2);
+            flex-direction: row;
+            box-shadow: 0 10px 30px rgba(12, 27, 73, 0.08);
+            border: 1px solid var(--platinum);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        @media(max-width: 768px) {
+            .project-card { flex-direction: column; }
+            .project-card .card-sidebar { min-width: 100%; border-right: none; border-bottom: 4px solid var(--savoy-blue); }
         }
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(12, 27, 73, 0.25);
+            box-shadow: 0 15px 35px rgba(12, 27, 73, 0.15);
         }
-        /* Icon Styling */
-        .project-card .card-image {
-            padding-top: 1.25rem;
+        
+        /* Icon/Sidebar Styling */
+        .project-card .card-sidebar {
+            background-color: var(--penn-blue);
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 300px;
+            max-width: 300px;
+            border-right: 4px solid var(--savoy-blue);
         }
-        .project-card .card-image img {
-            border-radius: 12px; /* Rounded corners for the icon image */
+        .project-card .card-sidebar img {
+            border-radius: 16px;
+            width: 112px;
+            height: 112px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
-
-        .project-card .card-content { 
-            flex-grow: 1;
-            padding-top: 0.5rem; 
-        }
-        .project-card .title, .project-card .content { color: var(--white); }
-        .project-card .subtitle { color: var(--white); }
-        .project-card .tag {
+        .project-card .card-sidebar .title { color: var(--white); text-align: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .project-card .card-sidebar .tag {
             background-color: var(--savoy-blue);
             color: var(--white);
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-align: center;
+            height: auto;
+            white-space: normal;
         }
-        .project-card .card-footer {
-            border-top: 1px solid var(--savoy-blue);
-            background-color: transparent;
+        
+        /* Main Content Area */
+        .project-card .card-main { 
+            flex-grow: 1;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        .project-card .card-footer-item {
-            color: var(--white);
-            font-weight: 500;
+        .project-card .problem-solution { flex-grow: 1; }
+        
+        .project-card h4.label-heading {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--savoy-blue);
+            margin-bottom: 0.4rem;
+            font-weight: 700;
         }
-        .project-card .card-footer-item:hover {
-            color: var(--platinum);
+        .project-card .content-text {
+            color: #333;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
         }
-
-        /* Content Section */
-        #content .image {
-            box-shadow: 0 8px 24px rgba(12, 27, 73, 0.1);
-            border-radius: 8px;
-            border: 1px solid var(--platinum);
+        .project-card .impact-text {
+            font-weight: 600;
+            color: var(--international-klein-blue);
+            background-color: #f5f6fa;
+            padding: 1rem;
+            border-left: 4px solid var(--international-klein-blue);
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 0;
+        }
+        
+        .project-card .card-actions {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--platinum);
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
         /* Button Styles */
@@ -166,218 +215,188 @@
             color: var(--white);
         }
 
-
         /* Footer */
         .footer {
             background-color: var(--platinum);
             color: var(--text-dark);
             border-top: 1px solid #d1d3d9;
+            padding: 3rem 1.5rem;
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero is-branded is-bold">
+    <!-- Header/Hero Section -->
+    <header class="hero is-branded is-bold">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <h1 class="title">
-                    Burns Development
-                </h1>
-                <h2 class="subtitle">
-                    Practical tools and templates that make your work life easier.
+                <h1 class="title">Corey Burns</h1>
+                <h2 class="subtitle mt-3">
+                    Solving modern business problems through process engineering and tactical technology.
                 </h2>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- About Section -->
+    <!-- About & Philosophy Section -->
+    <main>
     <section id="about" class="section">
         <div class="container">
-            <div class="box">
+            <article class="box">
                 <div class="columns is-vcentered">
-                    <div class="column is-one-quarter has-text-centered">
-                        <!-- Placeholder for your headshot -->
-                        <img src="Assets/Linkedin Headshot.png" alt="Corey Burns Headshot" class="headshot">
+                    <div class="column is-one-third has-text-centered pr-5">
+                        <img src="Assets/Linkedin Headshot.png" alt="Corey Burns" class="headshot">
+                        <h2 class="title is-3 has-text-dark mb-1">Corey Burns</h2>
+                        <h3 class="subtitle is-6 has-text-grey mt-0" style="text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Business Innovator</h3>
                     </div>
                     <div class="column">
-                        <h2 class="title is-3 has-text-dark">Hi, I'm Corey Burns.</h2>
-                        <p class="is-size-5 has-text-grey-dark">
-                            I like to make modern work painless, and love to build tools that are open source, private, and on device &mdash; so we can focus on our impact, not the friction.
+                        <h3 class="title is-4 has-text-international-klein-blue mb-4">Philosophy: Making Work Painless</h3>
+                        <p class="is-size-5 has-text-dark mb-4" style="font-weight: 500;">
+                            Software should adapt to how people work, not the other way around. 
                         </p>
-                        <p class="is-size-5 mt-3 has-text-grey-dark">
-                            Burns Development is my personal collection of tools and projects designed to streamline your workflow while keeping your data under your control.
+                        <p class="is-size-6 has-text-grey-dark mb-4" style="line-height: 1.7;">
+                            By deeply understanding business workflows, I use process engineering and the tactical application of technology to eliminate friction. My goal isn't just to build apps; it's to solve the root problems that mortgage and tech professionals face daily. When friction is removed, work feels effortless, and teams can focus on their actual impact.
+                        </p>
+                        <p class="is-size-6 has-text-grey-dark" style="line-height: 1.7;">
+                            Below is a portfolio of tools engineered to solve specific, real-world bottlenecks. Each project represents a process that was evaluated, optimized, and automated.
                         </p>
                     </div>
                 </div>
-            </div>
+            </article>
         </div>
     </section>
     
-    <!-- Projects Gallery Section -->
+    <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="title is-2 section-heading has-text-centered">My Projects</h2>
-            <!-- This div is now a CSS Grid container -->
+            <h2 class="title is-2 section-heading has-text-centered">The Toolbox & Portfolio</h2>
             <div id="project-gallery">
-                <!-- Project cards will be injected here -->
+                <!-- Injected via JS -->
             </div>
         </div>
     </section>
 
-
-    
     <!-- Connection Section -->
     <section id="connect" class="section section-alt-bg">
         <div class="container has-text-centered">
-             <h2 class="title is-2 section-heading">Let's Build Together</h2>
-             <p class="subtitle is-5 has-text-grey-dark mb-6">
-                I love building tools that empower people. If you find these projects useful, consider connecting with me on LinkedIn or contributing to the code on GitHub to help make them better for everyone.
+             <h2 class="title is-2 section-heading">Let's Connect</h2>
+             <p class="subtitle is-5 has-text-grey-dark mb-6" style="max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                I am constantly exploring new ways to improve business workflows and remove operational friction. Connect with me on LinkedIn to follow my latest projects, or check out my open-source work on GitHub.
              </p>
-             <div class="buttons is-centered">
+             <div class="buttons is-centered mt-5">
                 <a href="https://www.linkedin.com/in/coreytburns/" target="_blank" class="button is-primary-action is-large">
                     <span class="icon"><i class="fab fa-linkedin"></i></span>
                     <span>Connect on LinkedIn</span>
                 </a>
                 <a href="https://github.com/Spuds0588" target="_blank" class="button is-secondary-action is-large">
                     <span class="icon"><i class="fab fa-github"></i></span>
-                    <span>Contribute on GitHub</span>
+                    <span>View GitHub Profile</span>
                 </a>
              </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="content has-text-centered">
-            <p>© 2024 Burns Development. All rights reserved.</p>
-            <p>Built with passion by Corey Burns.</p>
+            <p><strong>Burns Development</strong> &copy; <span id="year"></span>. All rights reserved.</p>
+            <p>Engineered to make work painless.</p>
         </div>
     </footer>
 
-    <!-- Font Awesome for icons -->
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
-
-    <!-- Vanilla JavaScript for dynamic content -->
     <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
         document.addEventListener('DOMContentLoaded', function () {
-            
             const projects = [
                 {
                     title: 'MailLayer',
-                    tag: 'Chrome Extension',
+                    tag: 'Workflow Automation',
                     githubUrl: 'https://github.com/Spuds0588/MailLayer',
                     downloadUrl: 'https://github.com/Spuds0588/MailLayer',
                     iconUrl: 'Assets/MailLayer.png',
-                    description: 'Transform email links into a native-feeling composition experience. A free and open-source extension that lets you send emails directly via Gmail and Outlook APIs without leaving the page.',
+                    problem: 'Professionals waste countless hours context-switching between web applications (like CRMs) and clunky desktop email clients just to send routine messages.',
+                    solution: 'A free, open-source browser extension that intercepts mailto: links and injects a native, CSP-compliant email composer directly into the current webpage.',
+                    impact: 'Eliminates workflow friction and context-switching, enabling direct API sending via Gmail and Outlook without ever leaving the active workspace.',
                     downloadButtonText: 'View on GitHub'
                 },
                 {
                     title: 'OpenFDD',
-                    tag: 'Identity System',
+                    tag: 'Identity & Data Security',
                     githubUrl: 'https://github.com/Spuds0588/open-fdd',
                     downloadUrl: 'https://github.com/Spuds0588/open-fdd',
                     iconUrl: 'Assets/OpenFDD.png', 
-                    description: 'A production-ready did:web identity ecosystem and formatted data document platform for secure, verifiable information exchange.',
+                    problem: 'Static PDFs trap critical business data, forcing companies to rely on fragile OCR technology or manual data entry to extract information.',
+                    solution: 'An open specification replacing visual-first PDFs with interactive, cryptographically verified JSON-LD data containers bound inside a zero-JS HTML layer.',
+                    impact: 'Enables seamless, secure system-to-system data exchange while maintaining perfect human readability and tamper-evident security.',
                     downloadButtonText: 'View on GitHub'
                 },
                 {
-                    title: 'Instant Teams Meeting Link',
-                    tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/Spuds0588/Instant-Teams-Meeting-Link-Extension',
-                    downloadUrl: 'https://chrome.google.com/webstore/detail/instant-teams-meeting-lin/mjomgjmgdffokaknimffplhfjhiialep',
-                    iconUrl: 'Assets/20250610 Instant Teams Meeting Link - Icon 128_20250615_084219_0000.png', 
-                    description: 'Quickly generate and insert a Microsoft Teams meeting link via the right-click menu or popup.',
+                    title: 'Sparrow Offline CRM',
+                    tag: 'Data Sovereignty',
+                    githubUrl: 'https://github.com/Spuds0588/Sparrow-Offline-CRM',
+                    downloadUrl: 'https://spuds0588.github.io/Sparrow-Offline-CRM/',
+                    iconUrl: 'Assets/Sparrow-Offline-CRM.png',
+                    problem: 'Traditional cloud CRMs are expensive, complex to configure, and require individuals to surrender control of their proprietary contact data to third parties.',
+                    solution: 'A private, portable, "offline-first" CRM application engineered to run entirely within a single, local HTML file using modern browser File System APIs.',
+                    impact: 'Provides robust relationship management capabilities with zero infrastructure, zero cost, and absolute 100% data ownership.',
+                    downloadButtonText: 'Try Application'
+                },
+                {
+                    title: 'CSV QuickView',
+                    tag: 'Data Analysis',
+                    githubUrl: 'https://github.com/Spuds0588/CSV-Quickview',
+                    downloadUrl: 'https://chrome.google.com/webstore/detail/csv-quickview/gcoenalehcoefjbfjgjpkhdfjkjpedai',
+                    iconUrl: 'Assets/CSV-Quickview.png',
+                    problem: 'Opening simple CSV files triggers slow, heavy spreadsheet applications that disrupt focus just for a quick data check.',
+                    solution: 'A high-performance Chrome extension that intercepts local .csv files and renders them instantly in the browser.',
+                    impact: 'Turns the browser into a blazingly fast data viewer with sticky headers and dark mode, saving valuable time on routine data validation.',
                     downloadButtonText: 'Add to Chrome'
                 },
                 {
-                    title: 'Text to Unicode Formatter',
-                    tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/Spuds0588/text-to-unicode-formatter',
-                    downloadUrl: 'https://chrome.google.com/webstore/detail/text-to-unicode-formatter/fakdijijaghmfecglloajigojcgnhpdd',
-                    iconUrl: 'Assets/text_to_unicode.png', 
-                    description: 'Transform selected text with unicode styles, via right click menu.',
+                    title: 'Instant Teams Meeting Link',
+                    tag: 'Communication',
+                    githubUrl: 'https://github.com/Spuds0588/Instant-Teams-Meeting-Link-Extension',
+                    downloadUrl: 'https://chrome.google.com/webstore/detail/instant-teams-meeting-lin/mjomgjmgdffokaknimffplhfjhiialep',
+                    iconUrl: 'Assets/20250610 Instant Teams Meeting Link - Icon 128_20250615_084219_0000.png', 
+                    problem: 'Creating impromptu Teams meetings requires navigating away from the current task, clicking through multiple menus, and copying links manually.',
+                    solution: 'A lightweight extension that securely generates and inserts a Microsoft Teams meeting link via a single right-click context menu.',
+                    impact: 'Saves clicks and context shifts by integrating meeting generation seamlessly into any text field on the web.',
                     downloadButtonText: 'Add to Chrome'
                 },
                 {
                     title: 'Arive Cookie & Cache Cleaner',
-                    tag: 'Chrome Extension',
+                    tag: 'Support Utility',
                     githubUrl: 'https://github.com/Spuds0588/Arive-Cookie-and-Cache-Cleaner',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/arive-cookie-and-cache-cl/fdfbeepemfieoeeahcimjmeipibckcai',
                     iconUrl: 'Assets/arive_cookie_cleaner.png',
-                    description: 'Adds a button to clear cache and cookies on *.myarive.com and its login pages.',
+                    problem: 'Mortgage originators frequently encounter stale cache issues on complex platforms, requiring cumbersome browser setting navigation to resolve.',
+                    solution: 'A targeted extension providing a single-click button to clear relevant cookies and cache specifically for the working environment.',
+                    impact: 'Empowers non-technical users to self-resolve login and state issues instantly, significantly reducing IT support requests.',
                     downloadButtonText: 'Add to Chrome'
                 },
                 {
-                    title: 'CSV QuickView',
-                    tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/Spuds0588/CSV-Quickview',
-                    downloadUrl: 'https://chrome.google.com/webstore/detail/csv-quickview/gcoenalehcoefjbfjgjpkhdfjkjpedai',
-                    iconUrl: 'Assets/CSV-Quickview.png',
-                    description: 'Automatically renders local CSV files as a fast, readable table directly in your browser.',
-                    downloadButtonText: 'Add to Chrome'
-                },
-                {
-                    title: 'Universal Search Parameter Injector',
-                    tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/Spuds0588/Universal-Search-Parameter-Injector',
-                    downloadUrl: 'https://chrome.google.com/webstore/detail/universal-search-paramete/mipgaemiejdnnaffeniniojohjidaklf',
-                    iconUrl: 'Assets/USPI.png', 
-                    description: 'Injects URL parameters into page elements. Build URL sequences via popup.',
-                    downloadButtonText: 'Add to Chrome'
-                },
-                {
-                    title: 'Microsoft Help Remover',
-                    tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/Spuds0588/Microsoft-Help-Remover',
-                    downloadUrl: 'https://chrome.google.com/webstore/detail/microsoft-help-remover/ccjkcjhombnkhdmcnpfkegldianblani',
-                    iconUrl: 'Assets/Hide Microsoft Need Help Extension - Icon - 128px_20250615_084249_0000.png',
-                    description: "Removes the 'Need help?' widget on pages containing 'microsoft' in the URL.",
-                    downloadButtonText: 'Add to Chrome'
-                },
-                {
-                    title: 'M365 Waffle Menu',
-                    tag: 'Chrome Extension',
-                    githubUrl: 'https://github.com/Spuds0588/M365-Waffle-Menu-Extension',
-                    downloadUrl: 'https://chrome.google.com/webstore/detail/m365-waffle-menu/gpehjlglfibhfgpddoagehnfiodjhcck',
-                    iconUrl: 'Assets/M365-Waffle-Menu-Extension.png',
-                    description: 'Restores a classic waffle menu to the M365 navigation bar for quick access to all apps.',
-                    downloadButtonText: 'Add to Chrome'
-                },
-                {
-                    title: 'Universal Arive Merge Tags Inserter',
-                    tag: 'Chrome Extension',
+                    title: 'Universal Arive Merge Tags',
+                    tag: 'Process Optimization',
                     githubUrl: 'https://github.com/Spuds0588/Universal-Arive-Merge-Tags-Inserter',
                     downloadUrl: 'https://chrome.google.com/webstore/detail/universal-arive-merge-tag/olgokogbjimejmfniepamnmlpmklfbli',
                     iconUrl: 'Assets/Universal Arive Merge Tags Inserter - 128px Icon_20250615_084405_0000.png',
-                    description: 'Quickly insert ARIVE-compatible information tags using {{ trigger or right-click.',
+                    problem: 'Memorizing and typing specific merge tags for document generation systems is slow, tedious, and highly error-prone.',
+                    solution: 'An insertion tool that provides quick access to compatible tags using a simple trigger or right-click context menu.',
+                    impact: 'Dramatically accelerates template creation workflows and eliminates data-entry errors.',
                     downloadButtonText: 'Add to Chrome'
                 },
                 {
-                    title: 'Sparrow Offline CRM',
-                    tag: 'Tool',
-                    githubUrl: 'https://github.com/spuds0588/Sparrow-Offline-CRM',
-                    downloadUrl: 'https://spuds0588.github.io/Sparrow-Offline-CRM/',
-                    iconUrl: 'Assets/Sparrow-Offline-CRM.png',
-                    description: 'A simple, offline-first CRM tool for managing contacts and notes locally in your browser.',
-                    downloadButtonText: 'Visit Tool'
-                },
-                {
-                    title: 'Arive Dynamic Document Generator',
-                    tag: 'Tool',
-                    githubUrl: 'https://github.com/spuds0588/Arive-Dynamic-Document-Generator',
+                    title: 'Dynamic Document Generator',
+                    tag: 'No-Code Tooling',
+                    githubUrl: 'https://github.com/Spuds0588/Arive-Dynamic-Document-Generator',
                     downloadUrl: 'https://spuds0588.github.io/Arive-Dynamic-Document-Generator/',
                     iconUrl: 'Assets/Arive-Dynamic-Document-Generator.png',
-                    description: 'A tool for generating dynamic documents specifically for the Arive platform.',
-                    downloadButtonText: 'Visit Tool'
-                },
-                {
-                    title: 'Arive Task Bookmarklet Generator',
-                    tag: 'Tool',
-                    githubUrl: 'https://github.com/spuds0588/ReferenceMaterials',
-                    downloadUrl: 'https://spuds0588.github.io/ReferenceMaterials/Arive-Task-Bookmarklet-Generator(V4.1).html',
-                    iconUrl: 'Assets/Arive-Tasks-Bookmarklet-Logo-raw.png',
-                    description: 'A utility to create custom bookmarklets for automating task creation in Arive.',
-                    downloadButtonText: 'Visit Tool'
+                    problem: 'Creating personalized, dynamic HTML documents requires coding knowledge, creating a major bottleneck for business users.',
+                    solution: 'A browser-based SPA wizard that allows anyone to visually design, style, and generate self-contained HTML templates.',
+                    impact: 'Democratizes document creation, allowing professionals to build custom, dynamic assets without waiting on a developer.',
+                    downloadButtonText: 'Try Application'
                 }
             ];
 
@@ -390,40 +409,43 @@
 
             gallery.innerHTML = ''; 
             if(projects.length === 0) {
-                // This message is now inside the grid, so it needs to be a full-width column
-                gallery.innerHTML = `<div style="grid-column: 1 / -1;"><p class="has-text-centered">No projects to display yet. Check back soon!</p></div>`;
+                gallery.innerHTML = `<div style="grid-column: 1 / -1;"><p class="has-text-centered">No projects to display yet.</p></div>`;
                 return;
             }
 
             projects.forEach(project => {
-                // Create a wrapper for the card, which will be the grid item.
-                const gridItem = document.createElement('div');
-                // The card itself is the content of the grid item.
-                gridItem.innerHTML = `
-                    <div class="card project-card">
-                        <div class="card-image has-text-centered">
-                            <figure class="image is-64x64 is-inline-block">
-                                <img src="${project.iconUrl}" alt="${project.title} icon">
-                            </figure>
+                const article = document.createElement('article');
+                article.className = 'project-card';
+                article.innerHTML = `
+                    <div class="card-sidebar">
+                        <img src="${project.iconUrl}" alt="${project.title} icon">
+                        <h3 class="title">${project.title}</h3>
+                        <span class="tag">${project.tag}</span>
+                    </div>
+                    <div class="card-main">
+                        <div class="problem-solution">
+                            <h4 class="label-heading">The Problem</h4>
+                            <p class="content-text">${project.problem}</p>
+                            
+                            <h4 class="label-heading">The Solution</h4>
+                            <p class="content-text">${project.solution}</p>
+                            
+                            <h4 class="label-heading">The Impact</h4>
+                            <p class="content-text impact-text">${project.impact}</p>
                         </div>
-                        <div class="card-content has-text-centered">
-                            <p class="title is-4">${project.title}</p>
-                            <p class="subtitle is-6 mb-2"><span class="tag">${project.tag}</span></p>
-                            <div class="content is-small">
-                                ${project.description}
-                            </div>
+                        <div class="card-actions">
+                            <a href="${project.githubUrl}" target="_blank" class="button is-secondary-action">
+                                <span class="icon"><i class="fab fa-github"></i></span>
+                                <span>Source Code</span>
+                            </a>
+                            <a href="${project.downloadUrl}" target="_blank" class="button is-primary-action">
+                                <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                                <span>${project.downloadButtonText}</span>
+                            </a>
                         </div>
-                        <footer class="card-footer">
-                            <a href="${project.githubUrl}" target="_blank" class="card-footer-item">
-                                <span class="icon mr-2"><i class="fab fa-github"></i></span> GitHub
-                            </a>
-                            <a href="${project.downloadUrl}" target="_blank" class="card-footer-item">
-                                <span class="icon mr-2"><i class="fas fa-download"></i></span> ${project.downloadButtonText}
-                            </a>
-                        </footer>
                     </div>
                 `;
-                gallery.appendChild(gridItem);
+                gallery.appendChild(article);
             });
         }
     </script>
