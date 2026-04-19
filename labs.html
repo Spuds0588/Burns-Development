@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labs | Burns Development</title>
+    <meta name="description" content="Open-source tools and experimental projects by Corey Burns. Solving operational friction through tactical technology.">
+    
+    <link rel="icon" href="Assets/favicon.jpg" type="image/jpeg">
+    <!-- Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0B0F19;
+            --bg-card: #151D2E;
+            --bg-card-hover: #1A2438;
+            --accent-blue: #3B82F6;
+            --accent-hover: #60A5FA;
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --border-light: rgba(255,255,255,0.08);
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            padding-bottom: 4rem;
+        }
+
+        h1, h2, h3, .title {
+            font-family: 'Outfit', sans-serif !important;
+            letter-spacing: -0.02em;
+            color: var(--text-main) !important;
+        }
+
+        .nav-header {
+            padding: 2rem 1.5rem;
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--accent-blue); }
+
+        .labs-intro {
+            padding: 4rem 1.5rem 2rem 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .labs-title { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; }
+        .labs-subtitle { font-size: 1.25rem; color: var(--text-muted); }
+
+        /* Project Cards */
+        #projects { padding: 4rem 1.5rem; }
+        #project-gallery {
+            display: grid; gap: 3rem; max-width: 960px; margin: 0 auto;
+        }
+        
+        .project-card {
+            background: var(--bg-card);
+            border-radius: 24px;
+            padding: 3rem;
+            display: flex;
+            gap: 3.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2);
+            border: 1px solid var(--border-light);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            background: var(--bg-card-hover);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+        
+        .card-sidebar {
+            width: 120px; flex-shrink: 0;
+            display: flex; flex-direction: column; align-items: flex-start;
+        }
+        .card-sidebar img {
+            width: 90px; height: 90px; border-radius: 20px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5);
+            margin-bottom: 1.5rem;
+        }
+        .project-tag { 
+            display: inline-block; padding: 0.35rem 0.85rem; 
+            background: rgba(59, 130, 246, 0.15); color: var(--accent-blue);
+            font-size: 0.75rem; font-weight: 600; border-radius: 9999px; 
+            text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;
+        }
+
+        .card-main { flex-grow: 1; display: flex; flex-direction: column; }
+        .project-title { font-size: 1.85rem; font-weight: 700; color: var(--text-main); margin-bottom: 1rem; }
+        .project-desc { font-size: 1.05rem; color: var(--text-muted); line-height: 1.7; flex-grow: 1; }
+
+        .btn-group { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;}
+        .btn {
+            padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 600; font-size: 0.95rem;
+            display: inline-flex; align-items: center; gap: 0.5rem; 
+            transition: all 0.2s ease; cursor: pointer; text-decoration: none;
+            font-family: 'Inter', sans-serif;
+        }
+        .btn-primary { 
+            background: var(--accent-blue); color: #ffffff !important; 
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);
+        }
+        .btn-primary:hover { 
+            background: var(--accent-hover); transform: translateY(-2px); 
+        }
+        .btn-secondary { 
+            background: transparent; color: var(--text-main) !important; 
+            border: 1px solid var(--border-light); 
+        }
+        .btn-secondary:hover { 
+            background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2);
+        }
+
+        @media(max-width: 768px) {
+            .project-card { flex-direction: column; gap: 1.5rem; padding: 2rem; }
+            .card-sidebar { width: 100%; flex-direction: row; align-items: center; justify-content: space-between; }
+            .card-sidebar img { margin-bottom: 0; width: 72px; height: 72px; }
+            .project-tag { margin-bottom: 0;}
+        }
+
+        .footer {
+            background-color: var(--bg-dark); color: var(--text-muted);
+            border-top: 1px solid var(--border-light); padding: 4rem 1.5rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="nav-header">
+        <a href="index.html" class="back-link">
+            <span class="icon"><i class="fas fa-arrow-left"></i></span>
+            <span>Back to Architecture Portfolio</span>
+        </a>
+    </header>
+
+    <main>
+        <section class="labs-intro">
+            <h1 class="labs-title">Burns Development Labs</h1>
+            <p class="labs-subtitle">Tactical open-source utilities and workflow experiments built to solve real-world operational bottlenecks.</p>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <div id="project-gallery">
+                    <!-- Injected via JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p><strong>Burns Development Labs</strong> &copy; <span id="year"></span>. Open Source for a frictionless future.</p>
+    </footer>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const projects = [
+                {
+                    title: 'MailLayer',
+                    tag: 'Workflow Automation',
+                    githubUrl: 'https://github.com/Spuds0588/MailLayer',
+                    downloadUrl: 'https://github.com/Spuds0588/MailLayer',
+                    iconUrl: 'Assets/MailLayer.png',
+                    description: "Professionals often lose valuable time context-switching between web applications and desktop email clients. MailLayer intercepts mailto: links, injecting a native, CSP-compliant email composer directly into the current webpage for direct API sending via Gmail and Outlook.",
+                    downloadButtonText: 'View on GitHub'
+                },
+                {
+                    title: 'OpenFDD',
+                    tag: 'Data Architecture',
+                    githubUrl: 'https://github.com/Spuds0588/open-fdd',
+                    downloadUrl: 'https://github.com/Spuds0588/open-fdd',
+                    iconUrl: 'Assets/OpenFDD.png', 
+                    description: "Replaces visual-first PDFs with interactive, cryptographically verified JSON-LD data containers. Guarantees seamless system-to-system data exchange while maintaining human readability and tamper-evident security.",
+                    downloadButtonText: 'View on GitHub'
+                },
+                {
+                    title: 'Sparrow Offline CRM',
+                    tag: 'Data Sovereignty',
+                    githubUrl: 'https://github.com/Spuds0588/Sparrow-Offline-CRM',
+                    downloadUrl: 'https://spuds0588.github.io/Sparrow-Offline-CRM/',
+                    iconUrl: 'Assets/Sparrow-Offline-CRM.png',
+                    description: "A private, portable, \"offline-first\" CRM engineered to run entirely within a single local HTML file using modern browser File System APIs. Zero infrastructure, zero cost, and absolute data ownership.",
+                    downloadButtonText: 'Try Application'
+                },
+                {
+                    title: 'CSV QuickView',
+                    tag: 'Data Analysis',
+                    githubUrl: 'https://github.com/Spuds0588/CSV-Quickview',
+                    downloadUrl: 'https://chrome.google.com/webstore/detail/csv-quickview/gcoenalehcoefjbfjgjpkhdfjkjpedai',
+                    iconUrl: 'Assets/CSV-Quickview.png',
+                    description: "A high-performance Chrome extension that intercepts local .csv files and instantly renders them in the browser with sticky headers and dark mode. Accelerates routine data validation without heavy software.",
+                    downloadButtonText: 'Add to Chrome'
+                },
+                {
+                    title: 'Arive Cookie & Cache Cleaner',
+                    tag: 'Support Utility',
+                    githubUrl: 'https://github.com/Spuds0588/Arive-Cookie-and-Cache-Cleaner',
+                    downloadUrl: 'https://chrome.google.com/webstore/detail/arive-cookie-and-cache-cl/fdfbeepemfieoeeahcimjmeipibckcai',
+                    iconUrl: 'Assets/arive_cookie_cleaner.png',
+                    description: "Empowers Arive LOS users to self-resolve login and state issues by clearing targeted environment cookies with a single click. Reduces IT support tickets and keeps the loan file moving.",
+                    downloadButtonText: 'Add to Chrome'
+                },
+                {
+                    title: 'Universal Arive Merge Tags',
+                    tag: 'Process Optimization',
+                    githubUrl: 'https://github.com/Spuds0588/Universal-Arive-Merge-Tags-Inserter',
+                    downloadUrl: 'https://chrome.google.com/webstore/detail/universal-arive-merge-tag/olgokogbjimejmfniepamnmlpmklfbli',
+                    iconUrl: 'Assets/Universal Arive Merge Tags Inserter - 128px Icon_20250615_084405_0000.png',
+                    description: "Provides native-like access to the Arive merge tag catalog from external email builders via a context menu. Enables a seamless copy-paste-save workflow for importing external templates with perfect mapping.",
+                    downloadButtonText: 'Add to Chrome'
+                },
+                {
+                    title: 'Arive Dynamic Document Generator',
+                    tag: 'No-Code Tooling',
+                    githubUrl: 'https://github.com/Spuds0588/Arive-Dynamic-Document-Generator',
+                    downloadUrl: 'https://spuds0588.github.io/Arive-Dynamic-Document-Generator/',
+                    iconUrl: 'Assets/Arive-Dynamic-Document-Generator.png',
+                    description: "A browser-based SPA that empowers non-technical originators to visually design self-contained HTML templates that can be populated via URL parameters in Arive email templates.",
+                    downloadButtonText: 'Try Application'
+                },
+                {
+                    title: 'Arive Task Bookmarklet Generator',
+                    tag: 'Process Optimization',
+                    githubUrl: 'https://github.com/Spuds0588/ReferenceMaterials',
+                    downloadUrl: 'https://spuds0588.github.io/ReferenceMaterials/Arive-Task-Bookmarklet-Generator(V4.1).html',
+                    iconUrl: 'Assets/Arive-Tasks-Bookmarklet-Logo-raw.png',
+                    description: "Generates custom JavaScript bookmarklets that assign multiple tasks all at once in the Arive LOS. Bypasses manual clicks and upgrades task workflows without requiring a Pro-level account.",
+                    downloadButtonText: 'Try Application'
+                }
+            ];
+
+            const gallery = document.getElementById('project-gallery');
+            projects.forEach(project => {
+                const article = document.createElement('article');
+                article.className = 'project-card';
+                article.innerHTML = `
+                    <div class="card-sidebar">
+                        <img src="${project.iconUrl}" alt="${project.title} icon">
+                        <span class="project-tag">${project.tag}</span>
+                    </div>
+                    <div class="card-main">
+                        <h3 class="project-title">${project.title}</h3>
+                        <p class="project-desc">${project.description}</p>
+                        <div class="btn-group">
+                            <a href="${project.githubUrl}" target="_blank" class="btn btn-secondary">
+                                <span class="icon"><i class="fab fa-github"></i></span>
+                                <span>Source</span>
+                            </a>
+                            <a href="${project.downloadUrl}" target="_blank" class="btn btn-primary">
+                                <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                                <span>${project.downloadButtonText}</span>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                gallery.appendChild(article);
+            });
+        });
+    </script>
+</body>
+</html>
