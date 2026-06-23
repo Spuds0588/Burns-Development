@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pipeline Architect Framework | Burns Development</title>
+    <meta name="description" content="A systems engineering methodology to mortgage operations. Apply Reverse Institutional Design to transition from firefighting to high-velocity automation.">
+    
+    <!-- OpenGraph / Social Meta Tags -->
+    <meta property="og:title" content="The Pipeline Architect Framework: Reverse Institutional Design Manual">
+    <meta property="og:description" content="Stop bleeding capital. Map, invert, scale, and automate your mortgage operations pipeline using systems engineering.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="Assets/og-image.jpg">
+
+    <link rel="icon" href="Assets/favicon.jpg" type="image/jpeg">
+    <!-- Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0B0F19;
+            --bg-card: #151D2E;
+            --bg-card-hover: #1A2438;
+            --accent-blue: #3B82F6;
+            --accent-hover: #60A5FA;
+            --accent-purple: #8B5CF6;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --border-light: rgba(255,255,255,0.08);
+            --radius: 20px;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, .title {
+            font-family: 'Outfit', sans-serif !important;
+            letter-spacing: -0.02em;
+            color: var(--text-main) !important;
+        }
+
+        /* Nav Header */
+        .nav-header {
+            padding: 1.5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .back-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .back-link:hover { color: var(--accent-blue); transform: translateX(-2px); }
+        .nav-brand {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: -0.01em;
+            background: linear-gradient(135deg, var(--text-main), var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Hero / Introduction */
+        .hero-section {
+            padding: 6rem 1.5rem 4rem 1.5rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .framework-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            color: var(--accent-hover);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 9999px;
+            margin-bottom: 1.5rem;
+        }
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 30%, var(--accent-hover) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 750px;
+            margin: 0 auto 2rem auto;
+            line-height: 1.8;
+        }
+        .meta-info {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 500;
+        }
+
+        /* Main Layout */
+        .content-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 6rem 1.5rem;
+        }
+
+        /* Section Spacing & Dividers */
+        .doc-section {
+            padding: 5rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .doc-section:last-of-type {
+            border-bottom: none;
+        }
+        .section-num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        .section-header-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        /* AI Critical Hook Callout */
+        .ai-hook-container {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(59, 130, 246, 0.1);
+        }
+        .ai-hook-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .ai-hook-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-hover);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .ai-hook-header i {
+            font-size: 1.3rem;
+            color: var(--accent-hover);
+        }
+        .ai-hook-text {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        /* Phase 1: Zoom In Method Visual Graphic */
+        .zoom-visualizer {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+        }
+        .zoom-layer-box {
+            background: rgba(11, 15, 25, 0.6);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .zoom-layer-box:hover {
+            border-color: rgba(59, 130, 246, 0.4);
+            transform: translateY(-2px);
+        }
+        .zoom-layer-box:last-child {
+            margin-bottom: 0;
+        }
+        .zoom-layer-tag {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            color: var(--accent-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .zoom-layer-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .zoom-layer-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        .zoom-connector {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.15);
+            font-size: 1.2rem;
+            margin: -0.5rem 0 0.75rem 0;
+        }
+
+        /* Dreamer Hat Grid */
+        .dreamer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+        @media (max-width: 768px) {
+            .dreamer-grid { grid-template-columns: 1fr; }
+        }
+        .dreamer-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: border-color 0.3s;
+        }
+        .dreamer-card:hover {
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+        .dreamer-card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .dreamer-card-title i {
+            color: var(--accent-purple);
+        }
+        .dreamer-card-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Operational Inversion Table */
+        .inversion-table-container {
+            overflow-x: auto;
+            margin: 2.5rem 0;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .inversion-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+            background-color: var(--bg-card);
+        }
+        .inversion-table th {
+            background-color: rgba(11, 15, 25, 0.8);
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            padding: 1.25rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .inversion-table td {
+            padding: 1.25rem;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--text-muted);
+            vertical-align: top;
+        }
+        .inversion-table tr:last-child td {
+            border-bottom: none;
+        }
+        .inversion-table tr:hover td {
+            background-color: var(--bg-card-hover);
+            color: var(--text-main);
+        }
+        .inversion-table td strong {
+            color: var(--text-main);
+        }
+
+        /* Phase 4: Innovation Ladder Interactive */
+        .ladder-component {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+        @media (max-width: 768px) {
+            .ladder-component { grid-template-columns: 1fr; }
+        }
+        .ladder-graphic {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 0.75rem;
+            position: relative;
+        }
+        .ladder-rung-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 1.1rem 1.5rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .ladder-rung-btn:hover {
+            border-color: rgba(59, 130, 246, 0.4);
+            transform: translateX(4px);
+        }
+        .ladder-rung-btn.active {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+            border-color: var(--accent-blue);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.15);
+            transform: translateX(8px);
+        }
+        .rung-label-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .rung-num {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 6px;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ladder-rung-btn.active .rung-num {
+            background: var(--accent-blue);
+            color: #ffffff;
+        }
+        .rung-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        .ladder-details-card {
+            background: var(--bg-card);
+            border: 1px solid var(--accent-blue);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.05);
+            min-height: 320px;
+            transition: all 0.3s ease;
+        }
+        .details-header {
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+        .details-badge {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-hover);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .details-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .details-body {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* Workplace Tools Section & Sliding Scale */
+        .tools-showcase {
+            background: rgba(11, 15, 25, 0.4);
+            border-radius: var(--radius);
+            padding: 3rem 2rem;
+            margin: 3.5rem 0;
+            border: 1px solid var(--border-light);
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .tools-grid { grid-template-columns: 1fr; }
+        }
+        .tool-scale-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        .tool-scale-card:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+        }
+        .tool-card-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+        .tool-card-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        .scale-metric {
+            margin-bottom: 0.75rem;
+        }
+        .scale-metric:last-child {
+            margin-bottom: 0;
+        }
+        .metric-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .metric-info span:last-child {
+            color: var(--accent-hover);
+        }
+        .metric-bar-bg {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+        .metric-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            border-radius: 9999px;
+        }
+
+        /* Lead Gen Form Section */
+        .lead-gen-section {
+            background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-card) 100%);
+            border-top: 1px solid var(--border-light);
+            padding: 6rem 1.5rem;
+        }
+        .lead-gen-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        @media (max-width: 768px) {
+            .form-grid { grid-template-columns: 1fr; gap: 4rem; }
+        }
+        .lead-form-box {
+            background: rgba(11, 15, 25, 0.6);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .form-box-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .form-box-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        .form-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .form-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 0.85rem 1rem;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.25);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .form-select {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 0.85rem 1rem;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.25rem;
+        }
+        .form-select option {
+            background-color: var(--bg-card);
+            color: #ffffff;
+        }
+        .form-select:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.25);
+        }
+        .form-submit-btn {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            background: linear-gradient(135deg, var(--accent-blue), #2563EB);
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1.5rem;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .form-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35);
+            background: linear-gradient(135deg, var(--accent-hover), var(--accent-blue));
+        }
+
+        /* Success Alert */
+        .notification-banner {
+            display: none;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #34D399;
+            border-radius: 8px;
+            padding: 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--bg-dark);
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-light);
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="nav-header">
+        <a href="index.html" class="back-link">
+            <span class="icon"><i class="fas fa-arrow-left"></i></span>
+            <span>Back to Portfolio</span>
+        </a>
+        <div class="nav-brand">
+            <span>Burns Development</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <span class="framework-tag">Strategic Playbook</span>
+            <h1 class="hero-title">The Pipeline Architect Framework</h1>
+            <p class="hero-subtitle">A Systems Engineering Approach to Mortgage Operations & Reverse Institutional Design</p>
+            <div class="meta-info">
+                <span>Version 1.0 &bull; June 18, 2026 &bull; Process Engineering Division</span>
+            </div>
+        </section>
+
+        <!-- Main Document Body -->
+        <div class="content-container">
+            
+            <!-- Intro Content -->
+            <section class="doc-section" style="padding-top: 0;">
+                <h2 class="section-header-title">The Systems Engineering Approach to Mortgage Operations</h2>
+                <div class="content style-guide" style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
+                    <p>In an era defined by brutal margin compression and operational volatility, the independent mortgage banking sector faces a structural choice: continue to bleed capital via uncoordinated manual execution, or transition into a highly automated, high-velocity enterprise.</p>
+                    <p>Most mortgage companies solve bottlenecks with raw personnel volume. When files back up in underwriting, they hire more processors. When disclosure deadlines are missed, they purchase another piece of siloed point-software. This reactive, disjointed management style creates an environment characterized by constant firefighting, broken workflows, and internal friction.</p>
+                    <p>The <strong>Pipeline Architect Framework</strong> is a systematic, five-part engineering methodology designed to transition a mortgage enterprise from chaotic, manual firefighting into an elite, automated workflow machine. By applying the principles of <em>Reverse Institutional Design</em>, this framework transforms your operational staff from reactive problem solvers into systems architects who engineer and measure systemic pipeline velocity.</p>
+                </div>
+
+                <!-- AI HOOK CALLOUT -->
+                <div class="ai-hook-container">
+                    <div class="ai-hook-header">
+                        <i class="fas fa-microchip"></i>
+                        <span>The Pipeline Architect Axiom</span>
+                    </div>
+                    <div class="ai-hook-text">
+                        <strong>AI is the end of the process, not the beginning.</strong> You cannot effectively apply artificial intelligence to a chaotic, undocumented workflow. Doing so simply creates high-velocity chaos. To unlock the leverage of modern cognitive models, you must first map your system to the granular click, invert your internal design based on the client journey, and establish structured leverage levers. You build the engine first; you inject the AI fuel last.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Phase 1: Zoom In Method -->
+            <section id="phase-1" class="doc-section">
+                <span class="section-num">Phase 01</span>
+                <h2 class="section-header-title">Documenting Current State (The Zoom In Method)</h2>
+                <div class="content" style="color: var(--text-muted); font-size: 1.05rem;">
+                    <p>Before an infrastructure change can be deployed, you must map your existing operational reality with absolute clinical accuracy. You cannot engineer an automated solution until you understand the micro-actions causing the current friction. If you are starting completely from scratch or building a brand-new division, you must outline your baseline operational assumptions.</p>
+                    <p>To document a pipeline without getting lost in administrative complexity, utilize <strong>The Zoom In Method</strong>. This method segments documentation into three distinct architectural layers:</p>
+                </div>
+
+                <!-- Zoom Layers Visualizer -->
+                <div class="zoom-visualizer">
+                    <div class="zoom-layer-box">
+                        <span class="zoom-layer-tag">Layer 1: Macro Steps (The Cocktail Party Review)</span>
+                        <h4 class="zoom-layer-title" style="margin-top:0;">Broad Structural Pillars</h4>
+                        <p class="zoom-layer-desc">Top-level explanation of how your business processes a file, framed simply enough to explain at a barbecue. Keep it to 4&ndash;6 macro blocks without technical nuances or software platforms.</p>
+                        <div style="margin-top: 1rem; font-weight: 600; font-size: 0.85rem; color: var(--accent-hover); background: rgba(255,255,255,0.02); padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-light); display: inline-block;">
+                            Lead Generated &rarr; Loan App Taken &rarr; Documentation Collected &rarr; Underwriting Assessment &rarr; Funding
+                        </div>
+                    </div>
+                    
+                    <div class="zoom-connector"><i class="fas fa-chevron-down"></i> Zoom In</div>
+
+                    <div class="zoom-layer-box">
+                        <span class="zoom-layer-tag">Layer 2: Operational Sub-Steps</span>
+                        <h4 class="zoom-layer-title" style="margin-top:0;">Milestones, Software Interfaces, and Operators</h4>
+                        <p class="zoom-layer-desc">Break down each macro pillar into individual operational milestones. Identify who is responsible, what data changes hands, and what primary software platform acts as the baseline for this stage.</p>
+                        <div style="margin-top: 1rem; font-weight: 600; font-size: 0.85rem; color: var(--accent-hover); background: rgba(255,255,255,0.02); padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-light); display: inline-block;">
+                            Underwriting Macro &rarr; File Intake &rarr; Credit Report Hard Pull &rarr; AUS Run &rarr; Conditions Sheet &rarr; Clear to Close
+                        </div>
+                    </div>
+
+                    <div class="zoom-connector"><i class="fas fa-chevron-down"></i> Zoom In</div>
+
+                    <div class="zoom-layer-box" style="border-color: rgba(59,130,246,0.3); box-shadow: 0 0 15px rgba(59,130,246,0.05);">
+                        <span class="zoom-layer-tag" style="color: var(--accent-hover);">Layer 3: Granular Actions (The Control Tier)</span>
+                        <h4 class="zoom-layer-title" style="margin-top:0;">Hyper-Fine Human Micro-Movements</h4>
+                        <p class="zoom-layer-desc">This is the micro-engineering layer. Zoom in until you map every hyper-fine human movement. Document exactly what is clicked, what letters are typed, what URL is visited, and what specific script is read over the phone.</p>
+                        <div style="margin-top: 1rem; font-weight: 600; font-size: 0.85rem; color: var(--accent-hover); background: rgba(59,130,246,0.05); padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(59,130,246,0.2); display: inline-block;">
+                            Open LOS &rarr; Navigate 'eFolder' tab &rarr; Select 'Stipulation Log' &rarr; Type Missing Doc &rarr; Click 'Save Changes'
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.02); border-left: 4px solid var(--accent-blue); padding: 1.5rem; margin-top: 1.5rem; border-radius: 0 8px 8px 0; color: var(--text-main); font-size: 0.95rem;">
+                    <strong>The Architectural Rule:</strong> It is strictly at this granular level (Layer 3) that true systemic innovation occurs. Software tools, APIs, browser scripts, and automations can only hook into a business process when the human micro-actions are perfectly isolated and identified.
+                </div>
+            </section>
+
+            <!-- Phase 2: Dreamer Hat -->
+            <section id="phase-2" class="doc-section">
+                <span class="section-num">Phase 02</span>
+                <h2 class="section-header-title">Defining the Ideal Customer Experience (The Dreamer Hat)</h2>
+                <div class="content" style="color: var(--text-muted); font-size: 1.05rem;">
+                    <p>Once you have mapped your current reality, you must remove all technical constraints and design the absolute perfect borrower journey. Put on your dreamer hat. Imagine an experience so frictionless that it completely differentiates your business from any commoditized lender in the country.</p>
+                    <p>You must design this exclusively from the external customer's perspective. Map out exactly what they see, hear, experience, and feel at every point along your pipeline:</p>
+                </div>
+
+                <div class="dreamer-grid">
+                    <div class="dreamer-card">
+                        <h4 class="dreamer-card-title"><i class="fas fa-magnet"></i> Acquisition Hook</h4>
+                        <p class="dreamer-card-desc">How do they first discover your brand or interact with your digital presence? This must feel intuitive, tailored, and instantaneous, offering value before asking for commitments.</p>
+                    </div>
+                    <div class="dreamer-card">
+                        <h4 class="dreamer-card-title"><i class="fas fa-bolt"></i> Onboarding Friction</h4>
+                        <p class="dreamer-card-desc">What does it look like when they submit their initial application parameters? Is it an infinite form with 40 mandatory fields, or an instantaneous data-pull that pre-populates their profile?</p>
+                    </div>
+                    <div class="dreamer-card">
+                        <h4 class="dreamer-card-title"><i class="fas fa-eye"></i> Milestone Visibility</h4>
+                        <p class="dreamer-card-desc">How do they receive status updates when a milestone is cleared? Do they receive an automated text, a video explaining the next steps, or a clean, elegant client portal notification?</p>
+                    </div>
+                    <div class="dreamer-card">
+                        <h4 class="dreamer-card-title"><i class="fas fa-life-ring"></i> Exception Handling</h4>
+                        <p class="dreamer-card-desc">What happens when something goes wrong (e.g., an unseasoned cash deposit on a bank statement)? How do they resolve the condition securely without experiencing operational panic?</p>
+                    </div>
+                </div>
+
+                <p style="color: var(--text-muted); font-size: 1.05rem;">Define this vision with total, unapologetic idealism. This target state forms the benchmark for the remainder of the engineering protocol.</p>
+            </section>
+
+            <!-- Phase 3: Operational Inversion -->
+            <section id="phase-3" class="doc-section">
+                <span class="section-num">Phase 03</span>
+                <h2 class="section-header-title">Operational Inversion (Reverse Institutional Design)</h2>
+                <div class="content" style="color: var(--text-muted); font-size: 1.05rem;">
+                    <p>With your ideal customer experience defined, you must perform <strong>Reverse Institutional Design</strong>. Take the external customer vision and flip it 180-degrees to build the backend technical scaffold required to support it.</p>
+                    <p>Every customer-facing delight requires a corresponding backend architectural asset. You must look at each item in your client dream sequence and reverse-engineer the corporate systems and operator actions needed to make it occur:</p>
+                </div>
+
+                <div class="inversion-table-container">
+                    <table class="inversion-table">
+                        <thead>
+                            <tr>
+                                <th>External Client Touchpoint</th>
+                                <th>Internal Operational Requirement</th>
+                                <th>Technical/System Asset Needed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Client receives instantaneous milestone SMS updates.</strong></td>
+                                <td>Backend system must log real-time underwriting milestones without manual staff triggers.</td>
+                                <td>Native Loan Origination System (LOS) webhook mapped to an external API router (Zapier/Make).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Client receives a personalized status call every Tuesday.</strong></td>
+                                <td>Loan officer or processor is automatically assigned a recurring task and guided context.</td>
+                                <td>CRM automated workflow trigger with matching click-to-dial script integrations.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Client uploads documentation with zero friction.</strong></td>
+                                <td>Secure, web-based portal with optical character recognition (OCR) parsing capabilities.</td>
+                                <td>Automated document parsing software mapped directly to the LOS eFolder system.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p style="color: var(--text-muted); font-size: 1.05rem;">By working backward from the consumer's emotional peak to the internal infrastructure, you ensure every piece of software or technical change you implement is directly tethered to a strategic business outcome.</p>
+            </section>
+
+            <!-- Phase 4: Innovation Ladder -->
+            <section id="phase-4" class="doc-section">
+                <span class="section-num">Phase 04</span>
+                <h2 class="section-header-title">The Innovation Ladder (The Controlled Climb)</h2>
+                <div class="content" style="color: var(--text-muted); font-size: 1.05rem;">
+                    <p>The single biggest pitfall in corporate technology integration is attempting to jump straight from a messy manual state directly to complete, autonomous software automation. This is a lethal error. Skipping developmental layers creates catastrophic system crashes, leaves edge cases unhandled, and alienates your operational staff.</p>
+                    <p>To scale safely, you must build and ascend an <strong>Innovation Ladder</strong>. The ladder consists of six operational leverage levers, organized from highest human effort (no leverage) to lowest human effort (autonomous leverage). Click the steps below to examine each lever:</p>
+                </div>
+
+                <!-- Interactive Ladder Component -->
+                <div class="ladder-component">
+                    <div class="ladder-graphic">
+                        <button class="ladder-rung-btn" data-rung="1">
+                            <span class="rung-label-group">
+                                <span class="rung-num">1</span>
+                                <span class="rung-title">Employee Training</span>
+                            </span>
+                            <span class="rung-arrow"><i class="fas fa-chevron-right"></i></span>
+                        </button>
+                        <button class="ladder-rung-btn" data-rung="2">
+                            <span class="rung-label-group">
+                                <span class="rung-num">2</span>
+                                <span class="rung-title">Dynamic Templates</span>
+                            </span>
+                            <span class="rung-arrow"><i class="fas fa-chevron-right"></i></span>
+                        </button>
+                        <button class="ladder-rung-btn" data-rung="3">
+                            <span class="rung-label-group">
+                                <span class="rung-num">3</span>
+                                <span class="rung-title">External Tech Tools</span>
+                            </span>
+                            <span class="rung-arrow"><i class="fas fa-chevron-right"></i></span>
+                        </button>
+                        <button class="ladder-rung-btn active" data-rung="4">
+                            <span class="rung-label-group">
+                                <span class="rung-num">4</span>
+                                <span class="rung-title">Integrated Tech Tools</span>
+                            </span>
+                            <span class="rung-arrow"><i class="fas fa-chevron-right"></i></span>
+                        </button>
+                        <button class="ladder-rung-btn" data-rung="5">
+                            <span class="rung-label-group">
+                                <span class="rung-num">5</span>
+                                <span class="rung-title">User-Driven System Actions</span>
+                            </span>
+                            <span class="rung-arrow"><i class="fas fa-chevron-right"></i></span>
+                        </button>
+                        <button class="ladder-rung-btn" data-rung="6">
+                            <span class="rung-label-group">
+                                <span class="rung-num">6</span>
+                                <span class="rung-title">Automated System Actions</span>
+                            </span>
+                            <span class="rung-arrow"><i class="fas fa-chevron-right"></i></span>
+                        </button>
+                    </div>
+
+                    <!-- Details Card -->
+                    <div class="ladder-details-card" id="ladder-details">
+                        <div class="details-header">
+                            <span class="details-badge" id="details-badge">Lever 4 of 6</span>
+                            <h3 class="details-title" id="details-title" style="margin-top:0;">Integrated Tech Tools</h3>
+                        </div>
+                        <div class="details-body" id="details-body">
+                            Custom components, native integrations, browser-injected scripts, or internal tools developed directly within your primary technology ecosystem. These tools tie directly into existing workflows and systems, enabling operators to execute actions that are impossible or highly challenging using external apps, without context-switching.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content" style="color: var(--text-muted); font-size: 1.05rem; margin-top: 2rem;">
+                    <h3 style="font-size:1.4rem; font-weight:700;">How to Build the Ladder Deconstruction</h3>
+                    <p>To build a manageable implementation roadmap, start at your ideal state (Lever 6) and systematically work backward down the ladder to your current state by removing one layer of leverage at a time:</p>
+                    <ul style="padding-left:1.5rem; list-style-type: square; margin-bottom: 1.5rem;">
+                        <li><strong>Perfect State (Lever 6):</strong> System automatically sends documents based on an underwriting API update.</li>
+                        <li><strong>Step Down (Lever 5):</strong> A processor clicks a single button in the file view to trigger the document drop.</li>
+                        <li><strong>Step Down (Lever 4 - Integrated):</strong> The processor clicks an embedded sidebar helper tool that auto-fills fields inside the platform eFolder.</li>
+                        <li><strong>Step Down (Lever 3 - External):</strong> The processor copies data and logs into a third-party portal outside the native ecosystem.</li>
+                        <li><strong>Step Down (Lever 2):</strong> The processor writes the email manually using a standardized copy-paste template.</li>
+                        <li><strong>Step Down (Lever 1 - Baseline):</strong> The processor writes the notification entirely from scratch based on their baseline processing training.</li>
+                    </ul>
+                    <p>By constructing this ladder, your team can execute safe, measured, incremental improvements. You climb the ladder one rung at a time, allowing you to debug exception paths and branching logic before rushing into complete code dependency.</p>
+                </div>
+
+                <!-- Workplace Tools Sliding Scale (Additional Tweak) -->
+                <div class="tools-showcase">
+                    <h3 style="font-size:1.6rem; font-weight:700; margin-top:0;">Modern Browser-Based Workplace Tools</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">To execute integrated tools in modern, online, browser-based environments, you have a sliding scale of development options. They vary from ease of deployment to long-term supportability and functional depth:</p>
+                    
+                    <div class="tools-grid">
+                        <!-- Tool 1: Bookmarklets -->
+                        <div class="tool-scale-card">
+                            <h4 class="tool-card-title">Bookmarklets</h4>
+                            <p class="tool-card-desc">Lightweight JavaScript snippets saved as browser bookmarks. Executed on demand to automate active tab actions.</p>
+                            
+                            <div class="scale-metric">
+                                <div class="metric-info">
+                                    <span>Ease of Development</span>
+                                    <span>Extremely High (10/10)</span>
+                                </div>
+                                <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 100%;"></div></div>
+                            </div>
+                            <div class="scale-metric">
+                                <div class="metric-info">
+                                    <span>Ease of Deployment</span>
+                                    <span>Instant (10/10)</span>
+                                </div>
+                                <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 100%;"></div></div>
+                            </div>
+                            <div class="scale-metric">
+                                <div class="metric-info">
+                                    <span>Long-Term Supportability</span>
+                                    <span>Low (3/10)</span>
+                                </div>
+                                <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 30%;"></div></div>
+                            </div>
+                            <div class="scale-metric">
+                                <div class="metric-info">
+                                    <span>Functional Depth</span>
+                                    <span>Basic (4/10)</span>
+                                </div>
+                                <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 40%;"></div></div>
+                            </div>
+                        </div>
+
+                        <!-- Tool 2: Chrome Extensions -->
+                        <div class="tool-scale-card">
+                            <h4 class="tool-card-title">Chrome Extensions</h4>
+                            <p class="tool-card-desc">Custom browser packages injected into specific domains. Can listen to background events, inject persistent UI elements, and route cross-domain data.</p>
+                            
+                            <div class="scale-metric">
+                                <div class="metric-info">
+                                    <span>Ease of Development</span>
+                                    <span>Medium (6/10)</span>
+                                </div>
+                                <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 60%;"></div></div>
+                            </div>
+                            <div class="scale-metric">
+                                <div class="metric-info">
+                                    <span>Ease of Deployment</span>
+                                    <span>Moderate (5/10)</span>
+                                </div>
+                                <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 50%;"></div></div>
+                            </div>
+                            <div class="scale-metric">
+                                <div class="metric-info">
+                                    <span>Long-Term Supportability</span>
+                                    <span>Medium (6/10)</span>
+                                </div>
+                                <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 60%;"></div></div>
+                            </div>
+                            <div class="scale-metric">
+                                <div class="metric-info">
+                                    <span>Functional Depth</span>
+                                    <span>Advanced (7/10)</span>
+                                </div>
+                                <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 70%;"></div></div>
+                            </div>
+                        </div>
+
+                        <!-- Tool 3: Custom Web Apps -->
+                        <div class="tool-scale-card">
+                            <h4 class="tool-card-title">Custom Web Apps</h4>
+                            <p class="tool-card-desc">Full-stack standalone browser applications. Complete control over codebase, databases, APIs, and security protocols.</p>
+                            
+                            <div class="scale-metric">
+                                <div class="metric-info">
+                                    <span>Ease of Development</span>
+                                    <span>High Effort (3/10)</span>
+                                </div>
+                                <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 30%;"></div></div>
+                            </div>
+                            <div class="scale-metric">
+                                <div class="metric-info">
+                                    <span>Ease of Deployment</span>
+                                    <span>Complex (4/10)</span>
+                                </div>
+                                <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 40%;"></div></div>
+                            </div>
+                            <div class="scale-metric">
+                                <div class="metric-info">
+                                    <span>Long-Term Supportability</span>
+                                    <span>Very High (9/10)</span>
+                                </div>
+                                <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 90%;"></div></div>
+                            </div>
+                            <div class="scale-metric">
+                                <div class="metric-info">
+                                    <span>Functional Depth</span>
+                                    <span>Unlimited (10/10)</span>
+                                </div>
+                                <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 100%;"></div></div>
+                            </div>
+                        </div>
+
+                        <!-- Tool 4: Electron Wrapper Apps -->
+                        <div class="tool-scale-card">
+                            <h4 class="tool-card-title">Electron Wrapper Apps</h4>
+                            <p class="tool-card-desc">Desktop shells wrapping web apps to combine multiple tools. Bypasses browser tab sandboxing and accesses native OS controls.</p>
+                            
+                            <div class="scale-metric">
+                                <div class="metric-info">
+                                    <span>Ease of Development</span>
+                                    <span>Difficult (2/10)</span>
+                                </div>
+                                <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 20%;"></div></div>
+                            </div>
+                            <div class="scale-metric">
+                                <div class="metric-info">
+                                    <span>Ease of Deployment</span>
+                                    <span>Heavy (3/10)</span>
+                                </div>
+                                <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 30%;"></div></div>
+                            </div>
+                            <div class="scale-metric">
+                                <div class="metric-info">
+                                    <span>Long-Term Supportability</span>
+                                    <span>High (8/10)</span>
+                                </div>
+                                <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 80%;"></div></div>
+                            </div>
+                            <div class="scale-metric">
+                                <div class="metric-info">
+                                    <span>Functional Depth</span>
+                                    <span>Full Desktop (9.5/10)</span>
+                                </div>
+                                <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 95%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Phase 5: High-Velocity Evaluation -->
+            <section id="phase-5" class="doc-section">
+                <span class="section-num">Phase 05</span>
+                <h2 class="section-header-title">High-Velocity Evaluation (The Data Loops)</h2>
+                <div class="content" style="color: var(--text-muted); font-size: 1.05rem;">
+                    <p>The final stage of the Pipeline Architect Framework is continuous execution, tracking, and reevaluation. You must transition your business away from emotional decision-making into data-driven feedback loops.</p>
+                    
+                    <h3 style="font-size:1.35rem; font-weight:700; color: #ffffff; margin-top: 1.5rem;">1. Establish Explicit Success Metrics</h3>
+                    <p>Every ideal state mapped in Phase 02 must have a cold, mathematical metric tracking its execution status. Do not rely on staff testimonials; measure the digital logs.</p>
+                    <ul style="padding-left:1.5rem; list-style-type: circle; margin-bottom: 1.5rem;">
+                        <li><strong>Friction Goal:</strong> Rapid borrower document verification. &rarr; <strong>Metric:</strong> Average minutes elapsed between document upload and automated parsing confirmation.</li>
+                        <li><strong>Velocity Goal:</strong> Faster processing times. &rarr; <strong>Metric:</strong> Internal SLA compliance percentages across processing queues.</li>
+                    </ul>
+
+                    <h3 style="font-size:1.35rem; font-weight:700; color: #ffffff; margin-top: 1.5rem;">2. Run the Evaluation Loop</h3>
+                    <p>If your metric data is moving consistently closer to your target milestones, your engineering changes are functioning properly. Continue to ascend to the next rung on the Innovation Ladder.</p>
+                    <p>If your data indicates that a metric is stalling, or if you discover that an assumption you made about your "ideal client experience" actually creates operational bottlenecks on the backend, do not panic. <strong>Reevaluate the machine.</strong> Work your way back down the relevant ladder rung, restructure the operational inversion blueprint, modify your AI prompt rules or technical overrides, and begin the climb again. This is a continuous, infinite loop of enterprise architecture designed to turn your mortgage operation into an untouchable category-of-one competitor.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- LEAD MAGNET CTA SECTION -->
+        <section id="contact-forms" class="lead-gen-section">
+            <div class="lead-gen-container">
+                <div class="has-text-centered mb-5">
+                    <h2 class="title is-2">Join the Live Workshop Waitlist</h2>
+                    <p class="subtitle is-5" style="color: var(--text-muted); max-width: 800px; margin: 0.5rem auto 0 auto;">Secure your spot for our upcoming live operational blueprinting and workflow automation workshop. This is a hands-on, lecture-and-lab workshop designed to analyze and rebuild your specific business processes.</p>
+                </div>
+
+                <div style="max-width: 600px; margin: 0 auto;">
+                    <!-- Form: Live Workshop Invitation Waitlist -->
+                    <div class="lead-form-box">
+                        <div id="form-container">
+                            <h3 class="form-box-title" style="justify-content: center; gap: 0.75rem;"><i class="fas fa-clipboard-list" style="color:var(--accent-blue);"></i> Workshop Waitlist Registration</h3>
+                            
+                            <div style="background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.15); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-main); line-height: 1.6;">
+                                <i class="fas fa-graduation-cap" style="color: var(--accent-hover); margin-right: 0.5rem;"></i>
+                                <strong>Interactive Mapping Lab:</strong> This is a hands-on learning cohort. We will teach you the engineering methodology and dedicate focused lab hours to your company's processes. <strong>You will walk away with one fully completed, production-ready operational blueprint of a core workflow in your business.</strong>
+                            </div>
+
+                            <p class="form-box-subtitle has-text-centered" style="margin-bottom: 1.5rem;">Provide your corporate parameters below to request an invitation to the next live cohort. Spots are strictly limited.</p>
+                            
+                            <form id="architectLeadForm" action="https://script.google.com/macros/s/AKfycbw6yQNVoIeHUcY-Tb35gsHahUasEHnajwOANVkhkXUzqkY9a7TYrpu-L9s5pyBTCidT2g/exec" method="POST" class="architect-form">
+                                <div class="form-group">
+                                    <label class="form-label" for="email">Corporate Work Email</label>
+                                    <input class="form-input" type="email" name="email" id="email" required placeholder="name@mortgagecompany.com">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="volume">Current Monthly Origination Volume</label>
+                                    <input class="form-input" type="text" name="volume" id="volume" required placeholder="e.g., $15M - $25M">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="tech_stack">Primary Loan Origination System (LOS) Stack</label>
+                                    <input class="form-input" type="text" name="tech_stack" id="tech_stack" required placeholder="e.g., Encompass / ARIVE">
+                                </div>
+                                <button type="submit" id="submitBtn" class="form-submit-btn">
+                                    <span>REQUEST INVITATION TO LIVE WORKSHOP</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                                <p style="font-size: 0.8rem; color: rgba(255,255,255,0.4); text-align: center; margin-top: 1.25rem; line-height: 1.4;">
+                                    <i class="fas fa-shield-alt" style="margin-right: 0.25rem;"></i> We value your privacy. Your corporate information will never be shared, sold, or leased to third parties.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p><strong>Burns Development</strong> &copy; <span id="year"></span>. All rights reserved. <span style="margin: 0 10px; opacity: 0.3;">|</span> <a href="index.html" style="color: inherit; text-decoration: none; opacity: 0.5;">Portfolio</a> <span style="margin: 0 10px; opacity: 0.3;">|</span> <a href="labs.html" style="color: inherit; text-decoration: none; opacity: 0.5;">Labs</a></p>
+    </footer>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Innovation Ladder Interactive Data
+        const ladderData = {
+            1: {
+                title: "Employee Training",
+                badge: "Lever 1 of 6 (Baseline Reality)",
+                body: "The baseline operations model. The process relies entirely on human memory, standard operating procedures (SOPs) written in manuals, and manual execution based on onboarding and skills training. Highly error-prone and offers zero scale leverage."
+            },
+            2: {
+                title: "Dynamic Templates",
+                badge: "Lever 2 of 6",
+                body: "Standardized templates, email copy blocks, structured text files, or helper spreadsheets. The work is still completely manual, but templates drastically reduce cognitive friction, mitigate simple human typos, and establish baseline messaging consistency."
+            },
+            3: {
+                title: "External Tech Tools",
+                badge: "Lever 3 of 6",
+                body: "Third-party software platforms, public browser plugins, or external utilities outside the core system stack (e.g. calendars, notes apps, standard lookup extensions). Helps operators execute individual pieces of the task slightly faster, but introduces context-switching."
+            },
+            4: {
+                title: "Integrated Tech Tools",
+                badge: "Lever 4 of 6 (The Pivot Point)",
+                body: "Custom components, native integrations, browser-injected scripts, or internal tools developed directly within your primary technology ecosystem. These tools tie directly into existing workflows and systems, enabling operators to execute actions that are impossible or highly challenging using external apps, without context-switching."
+            },
+            5: {
+                title: "User-Driven System Actions",
+                badge: "Lever 5 of 6",
+                body: "A single human action (like clicking 'Approve' or closing a task) kicks off a structured chain of backend events. The system handles document assembly, email notifications, eFolder log creation, and downstream CRM triggers instantly based on that single user gesture."
+            },
+            6: {
+                title: "Automated System Actions",
+                badge: "Lever 6 of 6 (Autonomous Target)",
+                body: "The system operates completely autonomously based on database state triggers (e.g., an incoming webhook, an AUS approval status, or a timestamp). Handles logical branching, exceptions, notifications, and document dispatching without requiring human intervention."
+            }
+        };
+
+        // Add Event Listeners for Innovation Ladder
+        const rungButtons = document.querySelectorAll('.ladder-rung-btn');
+        const detailsBadge = document.getElementById('details-badge');
+        const detailsTitle = document.getElementById('details-title');
+        const detailsBody = document.getElementById('details-body');
+
+        rungButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Deactivate all
+                rungButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Activate clicked
+                button.classList.add('active');
+                
+                // Load Data
+                const rungNum = button.getAttribute('data-rung');
+                const data = ladderData[rungNum];
+                
+                if (data) {
+                    detailsBadge.textContent = data.badge;
+                    detailsTitle.textContent = data.title;
+                    detailsBody.textContent = data.body;
+                }
+            });
+        });
+
+
+        // Webhook Submission Handler for the Live Workshop form
+        window.addEventListener("load", function() {
+            const form = document.getElementById('architectLeadForm');
+            if (form) {
+                form.addEventListener("submit", function(e) {
+                    e.preventDefault(); // Lock native refresh
+                    
+                    const submitBtn = document.getElementById('submitBtn');
+                    submitBtn.innerHTML = '<span>TRANSMITTING DATA...</span>';
+                    submitBtn.disabled = true;
+
+                    const data = new FormData(form);
+                    const action = e.target.action;
+                    
+                    fetch(action, {
+                        method: 'POST',
+                        body: data,
+                    })
+                    .then(() => {
+                        // Silent data write successful — route cleanly to onboarding page
+                        window.location.href = 'https://spuds0588.github.io/thanks';
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        submitBtn.innerHTML = '<span>RETRY SUBMISSION</span><i class="fas fa-redo"></i>';
+                        submitBtn.disabled = false;
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
